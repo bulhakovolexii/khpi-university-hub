@@ -1,0 +1,25 @@
+// Footer bg pattern
+#footer-widgets {
+    position: relative;
+  }
+  
+  #footer-widgets::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 960px;
+    height: 540px;
+    background-image: url('./assets/images/pattern.svg');
+    background-size: contain;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  #footer-widgets > * {
+    position: relative;
+    z-index: 2;
+  }
