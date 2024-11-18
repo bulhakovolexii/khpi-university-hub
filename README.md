@@ -4,7 +4,7 @@
 
 Для редагування файлів стилів та змінних необхідно:
 
-1. встановити Node.js [інструкція] (https://nodejs.org/en/download/prebuilt-installer);
+1. встановити Node.js [інструкція](https://nodejs.org/en/download/prebuilt-installer);
 2. перейти до кореневого каталогу теми;
 3. виконати команду `npm install`;
 4. для генерації стилів використовується препроцесор SASS в синтаксисі SCSS [інструкція](https://sass-lang.com/);
