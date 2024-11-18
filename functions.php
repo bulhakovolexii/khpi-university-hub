@@ -16,6 +16,7 @@ add_action('after_setup_theme', function () {
  */
 function child_theme_dequeue_parent_styles() {
     wp_dequeue_style('university-hub-google-fonts'); // Parent theme font.
+	wp_dequeue_style('university-hub-font-awesome'); // Parent theme icon font.
     wp_dequeue_style('university-hub-block-style'); // Block styles.
     wp_dequeue_style('university-hub-editor-style'); // Editor styles.
 }
@@ -28,6 +29,7 @@ add_action('enqueue_block_editor_assets', 'child_theme_dequeue_parent_styles', 2
 function child_theme_enqueue_styles() {
     wp_enqueue_style('child-theme-style', get_stylesheet_directory_uri() . '/css/blocks.css', array(), '1.0.0');
     wp_enqueue_style('child-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap',);
+	wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', array(), '6.5.0');
 }
 add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles');
 

@@ -3,7 +3,7 @@
  * Theme URI:         https://github.com/bulhakovolexii/KhPI-University-Hub
  * Template:          university-hub
  * Description:       Дочірня тема для wordpress, що базується на темі University Hub від WEN Themes і є її редизайном з дотриманням корпоративного стилю Національного технічного університету Харківський політехнічний інститут.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Olexii BUlhakov
  * Author URI:        https://github.com/bulhakovolexii/
  * Tags:              one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready, theme-options, threaded-comments, footer-widgets, custom-logo, education, rtl-language-support
@@ -2259,6 +2259,10 @@ a.quick-email,
   content: "\f099";
 }
 
+.university_hub_widget_social ul li a[href*="x.com"]::before {
+  content: "\e61b";
+}
+
 .university_hub_widget_social ul li a[href*="linkedin.com"]::before {
   content: "\f0e1";
 }
@@ -2375,6 +2379,10 @@ a.quick-email,
 
 .university_hub_widget_social ul li a[href*="twitter.com"] {
   background-color: #00aced;
+}
+
+.university_hub_widget_social ul li a[href*="x.com"] {
+  background-color: #000000;
 }
 
 .university_hub_widget_social ul li a[href*="plus.google.com"] {
