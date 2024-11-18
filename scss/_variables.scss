@@ -1,0 +1,90 @@
+// parent theme main colors
+// also requires overriding in functions.php
+$black: #000;
+$white: #fff;
+$gray: #727272;
+$blue: #179bd7;
+$navy-blue: #253b80;
+$light-blue: #f7fcfe;
+$orange: #ff6000;
+$green: #77a464;
+$red: #e4572e;
+$yellow: #f4a024;
+
+// parent theme specific colors
+$breadcrumbs: #a0c5e8;
+$calendar-shades: #505ba0;
+$footer-bg: #031358;
+$blue-rgba: rgba(23, 155, 215, 1);
+$call-to-action-btn-hover: #6081a7;
+
+// parent fonts
+$main-font: "Roboto", sans-serif;
+$headers-font: "Tahoma", Geneva, sans-serif;
+
+// overriding parent fonts
+$main-font: "Fira Sans", sans-serif;
+$headers-font: "Fira Sans", Geneva, sans-serif;
+
+// colors from the brand book
+$khpi-red-900: #a0001b; // => main
+$khpi-red-800: #af1125;
+$khpi-red-700: #bc192c;
+$khpi-red-600: #ce2432;
+$khpi-red-500: #dc2d33;
+$khpi-red-400: #da434c;
+$khpi-red-300: #d2676d;
+$khpi-red-200: #e19195;
+$khpi-red-100: #f6c8cf;
+$khpi-red-50: #fbe9ed;
+
+$khpi-yellow-900: #f96605;
+$khpi-yellow-800: #fa8602;
+$khpi-yellow-700: #fa9800;
+$khpi-yellow-600: #fbaa00;
+$khpi-yellow-500: #fbb800; // => main
+$khpi-yellow-400: #fcc224;
+$khpi-yellow-300: #fdce4c;
+$khpi-yellow-200: #fedb7f;
+$khpi-yellow-100: #fee9b1;
+$khpi-yellow-50: #fff7e0;
+
+$khpi-blue-900: #28646a;
+$khpi-blue-800: #328895;
+$khpi-blue-700: #379cae;
+$khpi-blue-600: #3eb1c8; // => main
+$khpi-blue-500: #43c1db;
+$khpi-blue-400: #4bcbe2;
+$khpi-blue-300: #62d4e8;
+$khpi-blue-200: #8be1f0;
+$khpi-blue-100: #b7edf6;
+$khpi-blue-50: #e2f8fc;
+
+$khpi-black-900: #2a2a2a; // => main
+$khpi-black-800: #4c4c4c;
+$khpi-black-700: #6c6c6c;
+$khpi-black-600: #808080;
+$khpi-black-500: #aaaaaa;
+$khpi-black-400: #c8c8c8;
+$khpi-black-300: #eaeaea;
+$khpi-black-200: #f2f2f2;
+$khpi-black-100: #f7f7f7;
+$khpi-black-50: #fcfcfc;
+
+// overriding parent colors
+$black: $khpi-black-900;
+$white: $khpi-black-50;
+$gray: $khpi-black-700;
+$blue: $khpi-red-900;
+$navy-blue: $khpi-black-900;
+$light-blue: $khpi-black-50;
+$orange: $khpi-yellow-500;
+$green: #00a085; // Complementary to main red
+$red: $khpi-red-900;
+$yellow: $khpi-yellow-500;
+
+$breadcrumbs: $khpi-yellow-200;
+$calendar-shades: $khpi-red-600;
+$footer-bg: #1d1d1d; // khpi-black-1000
+$blue-rgba: rgba(160, 0, 27, 1);
+$call-to-action-btn-hover: $khpi-red-900;
