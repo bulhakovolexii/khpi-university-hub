@@ -102,3 +102,12 @@ function child_theme_setup_editor_features() {
 	);
 }
 add_action('after_setup_theme', 'child_theme_setup_editor_features', 20);
+
+// Change http links to https when inserting files
+add_filter( 'media_send_to_editor', 'force_protocol_relative');
+function force_protocol_relative($content) {
+
+  $content = str_replace( 'http://', 'https://', $content );
+
+  return $content;
+}
