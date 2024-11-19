@@ -128,7 +128,7 @@ Description: Used to style blocks.
 
 /* HTML Elements */
 hr.wp-block-separator {
-  background: none;
+  // background: none; // Fixes the separator block being hidden
   border-bottom-width: 1px;
 }
 

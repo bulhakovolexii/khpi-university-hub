@@ -120,7 +120,6 @@ Description: Used to style blocks.
 }
 /* HTML Elements */
 hr.wp-block-separator {
-  background: none;
   border-bottom-width: 1px;
 }
 
