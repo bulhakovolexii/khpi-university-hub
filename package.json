@@ -3,6 +3,7 @@
     "scripts": {
         "format": "prettier --write .",
         "check-format": "prettier --check functions.php",
+        "build": "node build.js",
         "sass:style": "sass --watch scss/style.scss style.css --no-source-map",
         "sass:rtl": "sass --watch scss/rtl.scss rtl.css --no-source-map",
         "sass:blocks": "sass --watch scss/css/blocks.scss css/blocks.css --no-source-map",
@@ -10,10 +11,12 @@
         "watch": "npm run sass:style & npm run sass:rtl & npm run sass:blocks & npm run sass:editor-blocks"
     },
     "author": "Olexii Bulhakov",
-    "license": "MIT",
+    "license": "GPL-2.0",
     "devDependencies": {
-        "sass": "^1.80.7",
+        "@prettier/plugin-php": "^0.22.2",
+        "archiver": "^7.0.1",
+        "fs-extra": "^11.2.0",
         "prettier": "^3.3.3",
-        "@prettier/plugin-php": "^0.22.2"
+        "sass": "^1.80.7"
     }
 }
