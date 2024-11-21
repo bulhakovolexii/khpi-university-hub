@@ -1,14 +1,11 @@
 {
     "name": "university-hub-child",
     "scripts": {
+        "sass-dev": "sass --watch --no-source-map scss:.",
+        "sass-prod": "sass --no-source-map scss:.",
         "format": "prettier --write .",
         "check-format": "prettier --check functions.php",
-        "build": "node build.js",
-        "sass:style": "sass --watch scss/style.scss style.css --no-source-map",
-        "sass:rtl": "sass --watch scss/rtl.scss rtl.css --no-source-map",
-        "sass:blocks": "sass --watch scss/css/blocks.scss css/blocks.css --no-source-map",
-        "sass:editor-blocks": "sass --watch scss/css/editor-blocks.scss css/editor-blocks.css --no-source-map",
-        "watch": "npm run sass:style & npm run sass:rtl & npm run sass:blocks & npm run sass:editor-blocks"
+        "build": "npm run sass-prod && npm run format && node build.js"
     },
     "author": "Olexii Bulhakov",
     "license": "GPL-2.0",
