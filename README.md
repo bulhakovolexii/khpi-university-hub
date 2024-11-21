@@ -6,15 +6,15 @@
 
 ## Розробка
 
-1. встановити Node.js [інструкція](https://nodejs.org/en/download/prebuilt-installer);
+1. встановити Node.js ([інструкція](https://nodejs.org/en/download/prebuilt-installer));
 2. перейти до кореневого каталогу теми;
 3. виконати команду `npm install`;
-4. для генерації стилів використовується препроцесор SASS в синтаксисі SCSS [інструкція](https://sass-lang.com/);
+4. для генерації стилів використовується препроцесор SASS в синтаксисі SCSS ([інструкція](https://sass-lang.com/));
 5. відстеження змін та збирання `.css` файлів **в процесі розробки**, виконується командою `npm run sass-dev`.
 
 ## Збірка
 
-1. встановити Node.js [інструкція](https://nodejs.org/en/download/prebuilt-installer);
+1. встановити Node.js ([інструкція](https://nodejs.org/en/download/prebuilt-installer));
 2. перейти до кореневого каталогу теми;
 3. виконати команду `npm install`;
 4. виконати команду `npm run build`.
