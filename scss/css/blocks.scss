@@ -3,6 +3,8 @@ Theme Name: University Hub
 Description: Used to style blocks.
 */
 
+@use '../variables' as *;
+
 /* Colors */
 .has-black-color {
     color: var(--black);
