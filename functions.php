@@ -158,7 +158,11 @@ add_action('customize_register', 'register_theme_customizer');
 function add_theme_body_class($classes)
 {
     $theme_palette = get_theme_mod('theme_palette', 'default');
-    $classes[] = 'theme-' . $theme_palette;
+
+    if ($theme_palette !== 'default') {
+        $classes[] = 'theme-' . $theme_palette;
+    }
+
     return $classes;
 }
 add_filter('body_class', 'add_theme_body_class');

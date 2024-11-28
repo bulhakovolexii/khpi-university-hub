@@ -3,25 +3,7 @@ Theme Name: University Hub
 Description: Used to style blocks.
 */
 
-@use '../variables' as *;
-
 /* Colors */
-.has-red-color {
-    color: $red;
-}
-
-.has-red-background-color {
-    background-color: $red;
-}
-
-.has-yellow-color {
-    color: $yellow;
-}
-
-.has-yellow-background-color {
-    background-color: $yellow;
-}
-
 .has-black-color {
     color: $black;
 }
@@ -86,6 +68,22 @@ Description: Used to style blocks.
     background-color: $green;
 }
 
+.has-red-color {
+    color: $red;
+}
+
+.has-red-background-color {
+    background-color: $red;
+}
+
+.has-yellow-color {
+    color: $yellow;
+}
+
+.has-yellow-background-color {
+    background-color: $yellow;
+}
+
 /* Custom Typography Preset */
 
 .has-small-font-size {
@@ -128,7 +126,7 @@ Description: Used to style blocks.
 
 /* HTML Elements */
 hr.wp-block-separator {
-    // background: none; // Fixes the separator block being hidden
+    background: none;
     border-bottom-width: 1px;
 }
 
