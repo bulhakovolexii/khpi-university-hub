@@ -278,7 +278,7 @@ body {
     font-size: 14px;
     line-height: 1.5;
     color: var(--gray);
-    font-family: $main-font;
+    font-family: var(--main-font);
 }
 
 h1,
@@ -298,7 +298,7 @@ h4,
 h5,
 h6 {
     color: #222222;
-    font-family: $headers-font;
+    font-family: var(--headers-font);
     font-weight: 400;
 }
 
@@ -1253,7 +1253,7 @@ span.comments-link::before {
 }
 
 .entry-header .entry-title {
-    font-family: $headers-font;
+    font-family: var(--headers-font);
     font-size: 25px;
     margin-bottom: 25px;
 }
@@ -2049,7 +2049,7 @@ a.quick-email,
     margin-bottom: 0;
     font-size: 28px;
     font-weight: 500;
-    font-family: $headers-font;
+    font-family: var(--headers-font);
 }
 
 .site-info a {
@@ -3435,7 +3435,7 @@ div.wpcf7 {
     margin-bottom: 0;
     padding-bottom: 6px;
     font-size: 20px;
-    font-family: $main-font;
+    font-family: var(--main-font);
 }
 
 .home-section-latest-news .latest-news-col-3 .latest-news-item {
@@ -3954,7 +3954,7 @@ a.more {
     margin-bottom: 5px;
     padding-right: 5px;
     padding-top: 5px;
-    font-family: $main-font;
+    font-family: var(--main-font);
 }
 
 .home-section-news-and-events .recent-news {
