@@ -11,17 +11,6 @@ $green: #77a464;
 $red: #e4572e;
 $yellow: #f4a024;
 
-// parent theme specific colors
-$breadcrumbs: #a0c5e8;
-$calendar-shades: #505ba0;
-$footer-bg: #253b80;
-$sub-footer-bg: #031358;
-$blue-rgba: rgba(23, 155, 215, 1);
-$call-to-action-btn-hover: #6081a7;
-$header-title-hex: #fff;
-$header-subtitle-rgba: rgba(255, 255, 255, 0.64);
-$last-news-frame: 0 2px 3px #dddddd;
-
 // colors from the brand book
 $khpi-red-900: #a0001b; // => main
 $khpi-red-800: #af1125;
@@ -70,6 +59,7 @@ $khpi-black-50: #fcfcfc;
 :root {
     --main-font: 'Roboto', sans-serif;
     --headers-font: 'Tahoma', Geneva, sans-serif;
+
     --black: #{$black};
     --white: #{$white};
     --gray: #{$gray};
@@ -80,23 +70,13 @@ $khpi-black-50: #fcfcfc;
     --green: #{$green};
     --red: #{$red};
     --yellow: #{$yellow};
-    --breadcrumbs: #{$breadcrumbs};
-    --calendar-shades: #{$calendar-shades};
-    --footer-bg: #{$footer-bg};
-    --sub-footer-bg: #{$sub-footer-bg};
-    --header-bg: #{$navy-blue};
-    --blue-rgba: #{$blue-rgba};
-    --call-to-action-btn-hover: #{$call-to-action-btn-hover};
-    --contrast-white: #{$white};
-    --header-title-hex: #{$header-title-hex};
-    --header-subtitle-rgba: #{$header-subtitle-rgba};
-    --last-news-frame: #{$last-news-frame};
 }
 
 body {
     &.theme-dark {
         --main-font: 'Fira Sans', sans-serif;
         --headers-font: 'Fira Sans', Geneva, sans-serif;
+
         --black: #{$khpi-black-900};
         --white: #{$khpi-black-50};
         --gray: #{$khpi-black-700};
@@ -107,21 +87,20 @@ body {
         --green: #00a085;
         --red: #{$khpi-red-900};
         --yellow: #{$khpi-yellow-500};
+
         --breadcrumbs: #{$khpi-yellow-200};
         --calendar-shades: #{$khpi-red-600};
         --footer-bg: #{$khpi-black-900};
         --sub-footer-bg: #1d1d1d;
         --header-bg: #{$khpi-black-900};
-        --blue-rgba: rgba(160, 0, 27, 1);
-        --call-to-action-btn-hover: #{$khpi-red-900};
         --contrast-white: #{$khpi-black-900};
-        --header-title-hex: #{$khpi-black-50};
-        --header-subtitle-rgba: #{$header-subtitle-rgba};
-        --last-news-frame: #{none};
+        --header-title: #{$khpi-black-50};
+        --header-subtitle: #{$khpi-black-100};
     }
     &.theme-light {
         --main-font: 'Fira Sans', sans-serif;
         --headers-font: 'Fira Sans', Geneva, sans-serif;
+
         --black: #{$khpi-black-900};
         --white: #{$khpi-black-50};
         --gray: #{$khpi-black-700};
@@ -132,16 +111,14 @@ body {
         --green: #00a085;
         --red: #{$khpi-red-900};
         --yellow: #{$khpi-yellow-500};
+
         --breadcrumbs: #{$khpi-yellow-200};
         --calendar-shades: #{$khpi-red-600};
         --footer-bg: #{$khpi-black-900};
         --sub-footer-bg: #1d1d1d;
         --header-bg: #{$khpi-black-50};
-        --blue-rgba: rgba(160, 0, 27, 1);
-        --call-to-action-btn-hover: #{$khpi-red-900};
         --contrast-white: #{$khpi-black-900};
-        --header-title-hex: #{$khpi-black-900};
-        --header-subtitle-rgba: rgba(42, 42, 42, 0.64);
-        --last-news-frame: #{none};
+        --header-title: #{$khpi-black-900};
+        --header-subtitle: #{$khpi-black-800};
     }
 }

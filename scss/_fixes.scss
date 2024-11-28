@@ -1,25 +1,229 @@
-// Footer bg pattern
-#footer-widgets {
-    position: relative;
+// fixes logo alignment
+a.custom-logo-link {
+    margin-top: 0px;
+}
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 960px;
-        height: 540px;
-        background-image: url('./assets/images/pattern.svg');
-        background-size: contain;
-        background-position: bottom right;
-        background-repeat: no-repeat;
-        opacity: 0.2;
-        z-index: 1;
-        pointer-events: none;
+// Logo size limitation
+.site-branding img {
+    margin-top: 0px;
+    max-height: 64px;
+    width: auto;
+}
+
+body.theme-dark,
+body.theme-light {
+    // Footer bg pattern
+    #footer-widgets {
+        background: var(--footer-bg) none repeat scroll 0 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 960px;
+            height: 540px;
+            background-image: url('./assets/images/pattern.svg');
+            background-size: contain;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            opacity: 0.2;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        & > * {
+            position: relative;
+            z-index: 2;
+        }
     }
 
-    & > * {
-        position: relative;
-        z-index: 2;
+    // main & top menus dropdown bg
+    .main-navigation ul ul,
+    #top-nav ul ul {
+        background-color: var(--blue);
+    }
+
+    // replace color of calendar shades
+    .custom-entry-date span.entry-day,
+    .home-section-news-and-events .custom-entry-date span.entry-day {
+        text-shadow:
+            var(--calendar-shades) 1px 1px,
+            var(--calendar-shades) 2px 2px,
+            var(--calendar-shades) 3px 3px,
+            var(--calendar-shades) 4px 4px,
+            var(--calendar-shades) 5px 5px,
+            var(--calendar-shades) 6px 6px,
+            var(--calendar-shades) 7px 7px,
+            var(--calendar-shades) 8px 8px,
+            var(--calendar-shades) 9px 9px,
+            var(--calendar-shades) 10px 10px,
+            var(--calendar-shades) 11px 11px,
+            var(--calendar-shades) 12px 12px,
+            var(--calendar-shades) 13px 13px,
+            var(--calendar-shades) 14px 14px,
+            var(--calendar-shades) 15px 15px,
+            var(--calendar-shades) 16px 16px,
+            var(--calendar-shades) 17px 17px,
+            var(--calendar-shades) 18px 18px,
+            var(--calendar-shades) 19px 19px,
+            var(--calendar-shades) 20px 20px,
+            var(--calendar-shades) 21px 21px,
+            var(--calendar-shades) 22px 22px,
+            var(--calendar-shades) 23px 23px,
+            var(--calendar-shades) 24px 24px,
+            var(--calendar-shades) 25px 25px,
+            var(--calendar-shades) 26px 26px,
+            var(--calendar-shades) 27px 27px,
+            var(--calendar-shades) 28px 28px,
+            var(--calendar-shades) 29px 29px,
+            var(--calendar-shades) 30px 30px,
+            var(--calendar-shades) 31px 31px,
+            var(--calendar-shades) 32px 32px,
+            var(--calendar-shades) 33px 33px,
+            var(--calendar-shades) 34px 34px,
+            var(--calendar-shades) 35px 35px,
+            var(--calendar-shades) 36px 36px,
+            var(--calendar-shades) 37px 37px,
+            var(--calendar-shades) 38px 38px,
+            var(--calendar-shades) 39px 39px,
+            var(--calendar-shades) 40px 40px,
+            var(--calendar-shades) 41px 41px,
+            var(--calendar-shades) 42px 42px,
+            var(--calendar-shades) 43px 43px,
+            var(--calendar-shades) 44px 44px,
+            var(--calendar-shades) 45px 45px,
+            var(--calendar-shades) 46px 46px,
+            var(--calendar-shades) 47px 47px,
+            var(--calendar-shades) 48px 48px,
+            var(--calendar-shades) 49px 49px,
+            var(--calendar-shades) 50px 50px,
+            var(--calendar-shades) 51px 51px,
+            var(--calendar-shades) 52px 52px,
+            var(--calendar-shades) 53px 53px,
+            var(--calendar-shades) 54px 54px,
+            var(--calendar-shades) 55px 55px,
+            var(--calendar-shades) 56px 56px,
+            var(--calendar-shades) 57px 57px,
+            var(--calendar-shades) 58px 58px;
+    }
+
+    // text color in call-to-action btn on hover
+    a.button:hover {
+        color: var(--blue);
+    }
+
+    // text color & letter-spacing in site description
+    .site-description {
+        color: var(--header-subtitle);
+        letter-spacing: unset;
+    }
+
+    // text color in header titles
+    #quick-contact a,
+    #quick-contact span,
+    #quick-contact li::before,
+    .site-title > a {
+        color: var(--header-title);
+    }
+
+    // Replacing colors in top-news to improve contrast
+    .top-news-title,
+    .slider-buttons a {
+        color: var(--contrast-white);
+    }
+
+    // header bg
+    #masthead {
+        background: var(--header-bg) none repeat scroll 0 0;
+    }
+
+    // new twitter icon
+    .university_hub_widget_social ul li a[href*='x.com']::before {
+        content: '\e61b';
+    }
+
+    .university_hub_widget_social ul li a[href*='x.com'] {
+        background-color: #000000;
+    }
+
+    // telegram icon
+    .university_hub_widget_social ul li a[href*='t.me']::before {
+        content: '\f2c6';
+    }
+
+    .university_hub_widget_social ul li a[href*='t.me'] {
+        background-color: #24a1de;
+    }
+
+    // main slider title bg
+    #main-slider h3,
+    .home-section-latest-news .read-more-button::after {
+        background: var(--blue) none repeat scroll 0 0;
+    }
+
+    // Replacing colors in slider btns to improve contrast
+    .slider-buttons a,
+    #main-slider .cycle-prev,
+    #main-slider .cycle-next {
+        color: var(--contrast-white);
+    }
+
+    // subfooter bg color
+    #colophon {
+        background-color: var(--sub-footer-bg);
+    }
+
+    // breadcrumbs color
+    #breadcrumb,
+    #breadcrumb a:hover,
+    #breadcrumb .breadcrumb-trail li:hover::after {
+        color: var(--breadcrumbs);
+    }
+
+    // latest news section title color
+    #front-page-home-sections .section-title,
+    #university-hub-front-page-widgets .widget-title,
+    .home-section-team .team-title a {
+        color: var(--navy-blue);
+    }
+
+    #front-page-home-sections .home-section-call-to-action .section-title {
+        color: var(--white);
+    }
+
+    // removes borders on home page latest-news
+    .home-section-latest-news .latest-news-inner-wrapper {
+        box-shadow: none;
+    }
+
+    // styling default editor tables
+    .wp-block-table {
+        & thead {
+            background-color: #f2f2f2;
+
+            & tr:last-child {
+                border-bottom: 3px solid grey;
+            }
+        }
+        & tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    }
+
+    // colored links in content area
+    .content-area {
+        a {
+            color: #a0001b;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        & .wp-block-button__link {
+            color: #fcfcfc;
+        }
     }
 }
