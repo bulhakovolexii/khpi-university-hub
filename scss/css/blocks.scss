@@ -5,83 +5,83 @@ Description: Used to style blocks.
 
 /* Colors */
 .has-black-color {
-    color: $black;
+    color: var(--black);
 }
 
 .has-black-background-color {
-    background-color: $black;
+    background-color: var(--black);
 }
 
 .has-white-color {
-    color: $white;
+    color: var(--white);
 }
 
 .has-white-background-color {
-    background-color: $white;
+    background-color: var(--white);
 }
 
 .has-gray-color {
-    color: $gray;
+    color: var(--gray);
 }
 
 .has-gray-background-color {
-    background-color: $gray;
+    background-color: var(--gray);
 }
 
 .has-blue-color {
-    color: $blue;
+    color: var(--blue);
 }
 
 .has-blue-background-color {
-    background-color: $blue;
+    background-color: var(--blue);
 }
 
 .has-navy-blue-color {
-    color: $navy-blue;
+    color: var(--navy-blue);
 }
 
 .has-navy-blue-background-color {
-    background-color: $navy-blue;
+    background-color: var(--navy-blue);
 }
 
 .has-light-blue-color {
-    color: $light-blue;
+    color: var(--light-blue);
 }
 
 .has-light-blue-background-color {
-    background-color: $light-blue;
+    background-color: var(--light-blue);
 }
 
 .has-orange-color {
-    color: $orange;
+    color: var(--orange);
 }
 
 .has-orange-background-color {
-    background-color: $orange;
+    background-color: var(--orange);
 }
 
 .has-green-color {
-    color: $green;
+    color: var(--green);
 }
 
 .has-green-background-color {
-    background-color: $green;
+    background-color: var(--green);
 }
 
 .has-red-color {
-    color: $red;
+    color: var(--red);
 }
 
 .has-red-background-color {
-    background-color: $red;
+    background-color: var(--red);
 }
 
 .has-yellow-color {
-    color: $yellow;
+    color: var(--yellow);
 }
 
 .has-yellow-background-color {
-    background-color: $yellow;
+    background-color: var(--yellow);
 }
 
 /* Custom Typography Preset */
@@ -223,20 +223,20 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-button__link {
-    background: $blue;
-    color: $white;
+    background: var(--blue);
+    color: var(--white);
 }
 
 .is-style-outline .wp-block-button__link:not(.has-text-color) {
-    color: $blue;
+    color: var(--blue);
 }
 
 .wp-block-button__link:hover,
 .wp-block-button__link:focus,
 .is-style-outline .wp-block-button__link:hover,
 .is-style-outline .wp-block-button__link:focus {
-    background-color: $orange;
-    color: $white;
+    background-color: var(--orange);
+    color: var(--white);
 }
 
 /* pullquote and Blockquote */
@@ -256,11 +256,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-quote {
-    border-left: 5px solid $blue;
+    border-left: 5px solid var(--blue);
 }
 
 .wp-block-quote.has-text-align-right:not(.is-style-large) {
-    border-right: 5px solid $blue;
+    border-right: 5px solid var(--blue);
 }
 
 .wp-block-quote.is-style-large {
@@ -273,8 +273,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-pullquote {
-    border-top: 5px solid $blue;
-    border-bottom: 5px solid $blue;
+    border-top: 5px solid var(--blue);
+    border-bottom: 5px solid var(--blue);
     clear: both;
     padding: 1.6em;
 }
@@ -299,7 +299,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background) {
-    background: $blue;
+    background: var(--blue);
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote {
@@ -316,15 +316,15 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) cite {
-    color: $white;
+    color: var(--white);
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) {
-    color: $white;
+    color: var(--white);
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote:not(.has-text-color) p {
-    color: $white;
+    color: var(--white);
 }
 
 /* Widget Area */
@@ -366,6 +366,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .widget .wp-block-tag-cloud a:hover {
-    border: 1px solid $blue;
-    color: $blue;
+    border: 1px solid var(--blue);
+    color: var(--blue);
 }

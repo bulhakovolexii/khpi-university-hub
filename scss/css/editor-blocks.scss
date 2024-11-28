@@ -7,8 +7,8 @@ Description: Used to style blocks in the editor.
 
 /* General Typography */
 .editor-styles-wrapper > * {
-    font-family: $main-font;
-    color: $gray;
+    font-family: var(--main-font);
+    color: var(--gray);
 }
 
 .editor-styles-wrapper > *,
@@ -18,7 +18,7 @@ Description: Used to style blocks in the editor.
 }
 
 .editor-post-title__block .editor-post-title__input {
-    font-family: $headers-font;
+    font-family: var(--headers-font);
     font-size: 25px;
     font-weight: 400;
     line-height: 1.5;
@@ -38,7 +38,7 @@ Description: Used to style blocks in the editor.
 .editor-styles-wrapper h4,
 .editor-styles-wrapper h5,
 .editor-styles-wrapper h6 {
-    font-family: $headers-font;
+    font-family: var(--headers-font);
     font-weight: 400;
     line-height: 1.5;
     color: #222222;
@@ -80,21 +80,21 @@ Description: Used to style blocks in the editor.
 }
 
 .wp-block-button__link {
-    background: $blue;
-    color: $white;
+    background: var(--blue);
+    color: var(--white);
 }
 
 .is-style-outline > .wp-block-button__link:not(.has-text-color),
 .wp-block-button__link.is-style-outline:not(.has-text-color) {
-    color: $blue;
+    color: var(--blue);
 }
 
 .wp-block-button__link:hover,
 .wp-block-button__link:focus,
 .is-style-outline > .wp-block-button__link:hover,
 .wp-block-button__link.is-style-outline:focus {
-    background-color: $orange;
-    color: $white;
+    background-color: var(--orange);
+    color: var(--white);
 }
 
 /* General Block Styles */
@@ -112,7 +112,7 @@ Description: Used to style blocks in the editor.
 .edit-post-visual-editor a,
 .editor-block-list__block a,
 .wp-block-freeform.block-library-rich-text__tinymce a {
-    color: $navy-blue;
+    color: var(--navy-blue);
 }
 
 /* List styles */
@@ -163,11 +163,11 @@ Description: Used to style blocks in the editor.
 /* Blockquote */
 
 .wp-block-quote {
-    border-left: 5px solid $blue;
+    border-left: 5px solid var(--blue);
 }
 
 .wp-block-quote.has-text-align-right:not(.is-style-large) {
-    border-right: 5px solid $blue;
+    border-right: 5px solid var(--blue);
 }
 
 .wp-block-quote.is-style-large {
@@ -197,8 +197,8 @@ Description: Used to style blocks in the editor.
 }
 
 .wp-block-pullquote {
-    border-top: 5px solid $blue;
-    border-bottom: 5px solid $blue;
+    border-top: 5px solid var(--blue);
+    border-bottom: 5px solid var(--blue);
     padding: 1.6em;
 }
 
@@ -221,8 +221,8 @@ Description: Used to style blocks in the editor.
 }
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background) {
-    background-color: $blue;
-    color: $white;
+    background-color: var(--blue);
+    color: var(--white);
 }
 
 .wp-block-pullquote {
