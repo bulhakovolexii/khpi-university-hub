@@ -330,6 +330,15 @@ a.custom-logo-link {
     padding: 15px 0px; // Removes side paddings on home page latest-news
 }
 
+.home-section-latest-news .latest-news-meta > span,
+.home-section-latest-news .latest-news-meta > span a {
+    color: $khpi-blue-900;
+}
+
+.home-section-latest-news .latest-news-meta > span a:hover {
+    text-decoration: underline;
+}
+
 /*--------------------------------------------------------------
 ### Our Team section style By WEN Themes
 --------------------------------------------------------------*/
@@ -355,6 +364,15 @@ a.custom-logo-link {
 
 .home-section-news-and-events .news-content {
     padding: 7px 0px 14px; // Removes side paddings on home page news
+}
+
+.home-section-news-and-events .block-meta span,
+.home-section-news-and-events .block-meta a {
+    color: $khpi-blue-900;
+}
+
+.home-section-news-and-events .block-meta span a:hover {
+    text-decoration: underline;
 }
 
 // Replace color of calendar shades
