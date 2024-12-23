@@ -76,6 +76,16 @@ function child_theme_setup_editor_features()
 {
     add_theme_support('editor-color-palette', [
         [
+            'name' => __('Red', 'university-hub'),
+            'slug' => 'red',
+            'color' => '#a0001b', // #e4572e => #a0001b
+        ],
+        [
+            'name' => __('Yellow', 'university-hub'),
+            'slug' => 'yellow',
+            'color' => '#fbb800', // #f4a024 => #fbb800
+        ],
+        [
             'name' => __('Black', 'university-hub'),
             'slug' => 'black',
             'color' => '#2a2a2a', // #000 => #2a2a2a
@@ -114,16 +124,6 @@ function child_theme_setup_editor_features()
             'name' => __('Green', 'university-hub'),
             'slug' => 'green',
             'color' => '#00a085', // #77a464 => #00a085
-        ],
-        [
-            'name' => __('Red', 'university-hub'),
-            'slug' => 'red',
-            'color' => '#a0001b', // #e4572e => #a0001b
-        ],
-        [
-            'name' => __('Yellow', 'university-hub'),
-            'slug' => 'yellow',
-            'color' => '#fbb800', // #f4a024 => #fbb800
         ],
     ]);
 }
