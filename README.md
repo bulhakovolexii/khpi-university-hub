@@ -2,6 +2,8 @@
 
 Дочірня тема для wordpress, що базується на темі University Hub від WEN Themes і є її редизайном з дотриманням корпоративного стилю Національного технічного університету "Харківський політехнічний інститут".
 
+Демо: [khpi-university-hub.freesite.online](http://khpi-university-hub.freesite.online/)
+
 ![theme screenshot](./screenshot.png)
 
 ## Розробка
