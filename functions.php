@@ -156,3 +156,18 @@ function load_dashicons()
     wp_enqueue_style('dashicons');
 }
 add_action('wp_enqueue_scripts', 'load_dashicons');
+
+/**
+ * Custom js connections
+ */
+function enqueue_child_theme_scripts()
+{
+    wp_enqueue_script(
+        'custom-script',
+        get_stylesheet_directory_uri() . '/js/custom.js',
+        [], // Dependencies (e.g. jQuery)
+        null, // Version (null for automatic)
+        true // Include in footer (true) or head (false)
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_child_theme_scripts');
