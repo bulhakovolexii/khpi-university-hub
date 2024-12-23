@@ -13,8 +13,17 @@ hr.wp-block-separator {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+#main-nav {
+    margin-top: 30px;
+}
+
 .main-navigation ul ul {
     background-color: $blue; // main & top menus dropdown bg
+}
+
+.main-navigation ul li.menu-item-has-children > a::after,
+.main-navigation ul li.page_item_has_children > a::after {
+    top: 16px;
 }
 
 /*--------------------------------------------------------------
@@ -161,6 +170,7 @@ a.custom-logo-link {
 #main-slider .cycle-prev,
 #main-slider .cycle-next {
     color: $black; // Replacing colors to improve contrast
+    font-size: 29px;
 }
 
 /*--------------------------------------------------------------
@@ -176,6 +186,15 @@ a.custom-logo-link {
 --------------------------------------------------------------*/
 #colophon {
     background-color: #1d1d1d; // khpi-black-1000;
+}
+
+/*Scrollup Style*/
+.scrollup {
+    padding: 4px 10px;
+}
+
+.scrollup:hover {
+    background-color: $orange;
 }
 
 /*--------------------------------------------------------------
