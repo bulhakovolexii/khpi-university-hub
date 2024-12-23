@@ -19,6 +19,7 @@ hr.wp-block-separator {
 
 .main-navigation ul ul {
     background-color: $blue; // main & top menus dropdown bg
+    min-width: 280px;
 }
 
 .main-navigation ul li.menu-item-has-children > a::after,
