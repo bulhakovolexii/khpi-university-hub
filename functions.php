@@ -130,6 +130,15 @@ function child_theme_setup_editor_features()
 add_action('after_setup_theme', 'child_theme_setup_editor_features', 20);
 
 /**
+ * Enables theme color inheritance for qubely
+ */
+function active_theme_preset()
+{
+    do_action('qubely_active_theme_preset');
+}
+add_action('after_switch_theme', 'active_theme_preset');
+
+/**
  * Change http links to https when inserting files
  */
 add_filter('media_send_to_editor', 'force_protocol_relative');
@@ -138,3 +147,12 @@ function force_protocol_relative($content)
     $content = str_replace('http://', 'https://', $content);
     return $content;
 }
+
+/**
+ * Dashicons connections
+ */
+function load_dashicons()
+{
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'load_dashicons');
