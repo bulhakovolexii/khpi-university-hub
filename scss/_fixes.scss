@@ -1,25 +1,296 @@
+@use './variables' as *;
+
+/*--------------------------------------------------------------
+## blocks.scss
+--------------------------------------------------------------*/
+hr.wp-block-separator {
+    background-color: $gray; // Fixes the separator block being hidden
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation ul ul {
+    background-color: $blue;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.custom-entry-date span.entry-day {
+    text-shadow:
+        $khpi-red-600 1px 1px,
+        $khpi-red-600 2px 2px,
+        $khpi-red-600 3px 3px,
+        $khpi-red-600 4px 4px,
+        $khpi-red-600 5px 5px,
+        $khpi-red-600 6px 6px,
+        $khpi-red-600 7px 7px,
+        $khpi-red-600 8px 8px,
+        $khpi-red-600 9px 9px,
+        $khpi-red-600 10px 10px,
+        $khpi-red-600 11px 11px,
+        $khpi-red-600 12px 12px,
+        $khpi-red-600 13px 13px,
+        $khpi-red-600 14px 14px,
+        $khpi-red-600 15px 15px,
+        $khpi-red-600 16px 16px,
+        $khpi-red-600 17px 17px,
+        $khpi-red-600 18px 18px,
+        $khpi-red-600 19px 19px,
+        $khpi-red-600 20px 20px,
+        $khpi-red-600 21px 21px,
+        $khpi-red-600 22px 22px,
+        $khpi-red-600 23px 23px,
+        $khpi-red-600 24px 24px,
+        $khpi-red-600 25px 25px,
+        $khpi-red-600 26px 26px,
+        $khpi-red-600 27px 27px,
+        $khpi-red-600 28px 28px,
+        $khpi-red-600 29px 29px,
+        $khpi-red-600 30px 30px,
+        $khpi-red-600 31px 31px,
+        $khpi-red-600 32px 32px,
+        $khpi-red-600 33px 33px,
+        $khpi-red-600 34px 34px,
+        $khpi-red-600 35px 35px,
+        $khpi-red-600 36px 36px,
+        $khpi-red-600 37px 37px,
+        $khpi-red-600 38px 38px,
+        $khpi-red-600 39px 39px,
+        $khpi-red-600 40px 40px,
+        $khpi-red-600 41px 41px,
+        $khpi-red-600 42px 42px,
+        $khpi-red-600 43px 43px,
+        $khpi-red-600 44px 44px,
+        $khpi-red-600 45px 45px,
+        $khpi-red-600 46px 46px,
+        $khpi-red-600 47px 47px,
+        $khpi-red-600 48px 48px,
+        $khpi-red-600 49px 49px,
+        $khpi-red-600 50px 50px,
+        $khpi-red-600 51px 51px,
+        $khpi-red-600 52px 52px,
+        $khpi-red-600 53px 53px,
+        $khpi-red-600 54px 54px,
+        $khpi-red-600 55px 55px,
+        $khpi-red-600 56px 56px,
+        $khpi-red-600 57px 57px,
+        $khpi-red-600 58px 58px;
+}
+
+/*--------------------------------------------------------------
+# Custom By WEN Themes
+--------------------------------------------------------------*/
+/*buttons*/
+a.button:hover {
+    color: $khpi-red-900;
+}
+
+/*--------------------------------------------------------------
+##  Header Style By WEN Themes
+--------------------------------------------------------------*/
+a.custom-logo-link {
+    margin-top: 0px; // Fixes logo alignment
+}
+
+.site-description {
+    letter-spacing: 0px; // Turns off wide letter spacing in the site title subheading
+}
+
+.top-news-title {
+    color: $black; // Replacing colors to improve contrast
+}
+
+.site-branding img {
+    margin-top: 0px; // Fixes logo alignment
+    // Logo size limitation
+    max-height: 64px;
+    width: auto;
+}
+
+#top-nav ul ul {
+    background-color: $blue;
+}
+
+/*--------------------------------------------------------------
+## Social Links Style By WEN Themes
+--------------------------------------------------------------*/
+/*new twitter*/
+.university_hub_widget_social ul li a[href*='x.com']::before {
+    content: '\e61b';
+}
+
+.university_hub_widget_social ul li a[href*='x.com'] {
+    background-color: #000000;
+}
+
+/*--------------------------------------------------------------
+## Main slider Style By WEN Themes
+--------------------------------------------------------------*/
+#main-slider h3 {
+    background: rgba(160, 0, 27, 1) none repeat scroll 0 0; // same as $khpi-red-900 but rgba
+}
+
+.slider-buttons a {
+    color: $black; // Replacing colors to improve contrast
+}
+
+/*Slider cycle next / previous*/
+#main-slider .cycle-prev,
+#main-slider .cycle-next {
+    color: $black; // Replacing colors to improve contrast
+}
+
+/*--------------------------------------------------------------
+## Footer Style By WEN Themes
+--------------------------------------------------------------*/
+#colophon {
+    background-color: #1d1d1d; // khpi-black-1000;
+}
+
+/*--------------------------------------------------------------
+## Inner Pages Style By WEN Themes
+--------------------------------------------------------------*/
+/*Basic Breadcrumb */
+#breadcrumb {
+    color: $khpi-yellow-200;
+}
+
+#breadcrumb a:hover,
+#breadcrumb .breadcrumb-trail li:hover::after {
+    color: $khpi-yellow-200;
+}
+
+/*--------------------------------------------------------------
+## Home Section
+--------------------------------------------------------------*/
+#front-page-home-sections .section-title,
+#university-hub-front-page-widgets .widget-title {
+    color: $navy-blue;
+}
+
+/*--------------------------------------------------------------
+### Latest News post section style By WEN Themes
+--------------------------------------------------------------*/
+.home-section-latest-news .read-more-button::after {
+    background: rgba(160, 0, 27, 1) none repeat scroll 0 0; // same as $khpi-red-900 but rgba
+}
+
+/*--------------------------------------------------------------
+### Our Team section style By WEN Themes
+--------------------------------------------------------------*/
+.home-section-team .team-title a {
+    color: $navy-blue;
+}
+
+/*--------------------------------------------------------------
+### Featured News Events section style By WEN Themes
+--------------------------------------------------------------*/
+.home-section-news-and-events .custom-entry-date span.entry-day {
+    text-shadow:
+        $khpi-red-600 1px 1px,
+        $khpi-red-600 2px 2px,
+        $khpi-red-600 3px 3px,
+        $khpi-red-600 4px 4px,
+        $khpi-red-600 5px 5px,
+        $khpi-red-600 6px 6px,
+        $khpi-red-600 7px 7px,
+        $khpi-red-600 8px 8px,
+        $khpi-red-600 9px 9px,
+        $khpi-red-600 10px 10px,
+        $khpi-red-600 11px 11px,
+        $khpi-red-600 12px 12px,
+        $khpi-red-600 13px 13px,
+        $khpi-red-600 14px 14px,
+        $khpi-red-600 15px 15px,
+        $khpi-red-600 16px 16px,
+        $khpi-red-600 17px 17px,
+        $khpi-red-600 18px 18px,
+        $khpi-red-600 19px 19px,
+        $khpi-red-600 20px 20px,
+        $khpi-red-600 21px 21px,
+        $khpi-red-600 22px 22px,
+        $khpi-red-600 23px 23px,
+        $khpi-red-600 24px 24px,
+        $khpi-red-600 25px 25px,
+        $khpi-red-600 26px 26px,
+        $khpi-red-600 27px 27px,
+        $khpi-red-600 28px 28px,
+        $khpi-red-600 29px 29px,
+        $khpi-red-600 30px 30px,
+        $khpi-red-600 31px 31px,
+        $khpi-red-600 32px 32px,
+        $khpi-red-600 33px 33px,
+        $khpi-red-600 34px 34px,
+        $khpi-red-600 35px 35px,
+        $khpi-red-600 36px 36px,
+        $khpi-red-600 37px 37px,
+        $khpi-red-600 38px 38px,
+        $khpi-red-600 39px 39px,
+        $khpi-red-600 40px 40px,
+        $khpi-red-600 41px 41px,
+        $khpi-red-600 42px 42px,
+        $khpi-red-600 43px 43px,
+        $khpi-red-600 44px 44px,
+        $khpi-red-600 45px 45px,
+        $khpi-red-600 46px 46px,
+        $khpi-red-600 47px 47px,
+        $khpi-red-600 48px 48px,
+        $khpi-red-600 49px 49px,
+        $khpi-red-600 50px 50px,
+        $khpi-red-600 51px 51px,
+        $khpi-red-600 52px 52px,
+        $khpi-red-600 53px 53px,
+        $khpi-red-600 54px 54px,
+        $khpi-red-600 55px 55px,
+        $khpi-red-600 56px 56px,
+        $khpi-red-600 57px 57px,
+        $khpi-red-600 58px 58px;
+}
+
+/*--------------------------------------------------------------
+##  Media Queries By WEN Themes
+--------------------------------------------------------------*/
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+    /*footer widget area*/
+    .slider-buttons a {
+        color: $black; // Replacing colors to improve contrast
+    }
+}
+
+/*--------------------------------------------------------------
+## New design
+--------------------------------------------------------------*/
 // Footer bg pattern
 #footer-widgets {
     position: relative;
-}
 
-#footer-widgets::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 960px;
-    height: 540px;
-    background-image: url('./assets/images/pattern.svg');
-    background-size: contain;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    opacity: 0.2;
-    z-index: 1;
-    pointer-events: none;
-}
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 960px;
+        height: 540px;
+        background-image: url('./assets/images/pattern.svg');
+        background-size: contain;
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+        z-index: 1;
+        pointer-events: none;
+    }
 
-#footer-widgets > * {
-    position: relative;
-    z-index: 2;
+    & > * {
+        position: relative;
+        z-index: 2;
+    }
 }

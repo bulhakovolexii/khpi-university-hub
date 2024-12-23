@@ -3,7 +3,7 @@
  * Theme URI:         https://github.com/bulhakovolexii/KhPI-University-Hub
  * Template:          university-hub
  * Description:       Дочірня тема для wordpress, що базується на темі University Hub від WEN Themes і є її редизайном з дотриманням корпоративного стилю Національного технічного університету Харківський політехнічний інститут.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Olexii Bulhakov
  * Author URI:        https://github.com/bulhakovolexii/
  * Tags:              one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready, theme-options, threaded-comments, footer-widgets, custom-logo, education, rtl-language-support
@@ -642,7 +642,7 @@ a:active {
     -webkit-transition:
         -webkit-transform 0.5s ease,
         opacity 0.2s ease;
-    background-color: $blue;
+    background-color: #179bd9;
     padding: 5px 20px 0;
 }
 
@@ -1185,64 +1185,64 @@ span.comments-link::before {
     overflow: hidden;
     width: 73px;
     text-shadow:
-        $calendar-shades 1px 1px,
-        $calendar-shades 2px 2px,
-        $calendar-shades 3px 3px,
-        $calendar-shades 4px 4px,
-        $calendar-shades 5px 5px,
-        $calendar-shades 6px 6px,
-        $calendar-shades 7px 7px,
-        $calendar-shades 8px 8px,
-        $calendar-shades 9px 9px,
-        $calendar-shades 10px 10px,
-        $calendar-shades 11px 11px,
-        $calendar-shades 12px 12px,
-        $calendar-shades 13px 13px,
-        $calendar-shades 14px 14px,
-        $calendar-shades 15px 15px,
-        $calendar-shades 16px 16px,
-        $calendar-shades 17px 17px,
-        $calendar-shades 18px 18px,
-        $calendar-shades 19px 19px,
-        $calendar-shades 20px 20px,
-        $calendar-shades 21px 21px,
-        $calendar-shades 22px 22px,
-        $calendar-shades 23px 23px,
-        $calendar-shades 24px 24px,
-        $calendar-shades 25px 25px,
-        $calendar-shades 26px 26px,
-        $calendar-shades 27px 27px,
-        $calendar-shades 28px 28px,
-        $calendar-shades 29px 29px,
-        $calendar-shades 30px 30px,
-        $calendar-shades 31px 31px,
-        $calendar-shades 32px 32px,
-        $calendar-shades 33px 33px,
-        $calendar-shades 34px 34px,
-        $calendar-shades 35px 35px,
-        $calendar-shades 36px 36px,
-        $calendar-shades 37px 37px,
-        $calendar-shades 38px 38px,
-        $calendar-shades 39px 39px,
-        $calendar-shades 40px 40px,
-        $calendar-shades 41px 41px,
-        $calendar-shades 42px 42px,
-        $calendar-shades 43px 43px,
-        $calendar-shades 44px 44px,
-        $calendar-shades 45px 45px,
-        $calendar-shades 46px 46px,
-        $calendar-shades 47px 47px,
-        $calendar-shades 48px 48px,
-        $calendar-shades 49px 49px,
-        $calendar-shades 50px 50px,
-        $calendar-shades 51px 51px,
-        $calendar-shades 52px 52px,
-        $calendar-shades 53px 53px,
-        $calendar-shades 54px 54px,
-        $calendar-shades 55px 55px,
-        $calendar-shades 56px 56px,
-        $calendar-shades 57px 57px,
-        $calendar-shades 58px 58px;
+        #505ba0 1px 1px,
+        #505ba0 2px 2px,
+        #505ba0 3px 3px,
+        #505ba0 4px 4px,
+        #505ba0 5px 5px,
+        #505ba0 6px 6px,
+        #505ba0 7px 7px,
+        #505ba0 8px 8px,
+        #505ba0 9px 9px,
+        #505ba0 10px 10px,
+        #505ba0 11px 11px,
+        #505ba0 12px 12px,
+        #505ba0 13px 13px,
+        #505ba0 14px 14px,
+        #505ba0 15px 15px,
+        #505ba0 16px 16px,
+        #505ba0 17px 17px,
+        #505ba0 18px 18px,
+        #505ba0 19px 19px,
+        #505ba0 20px 20px,
+        #505ba0 21px 21px,
+        #505ba0 22px 22px,
+        #505ba0 23px 23px,
+        #505ba0 24px 24px,
+        #505ba0 25px 25px,
+        #505ba0 26px 26px,
+        #505ba0 27px 27px,
+        #505ba0 28px 28px,
+        #505ba0 29px 29px,
+        #505ba0 30px 30px,
+        #505ba0 31px 31px,
+        #505ba0 32px 32px,
+        #505ba0 33px 33px,
+        #505ba0 34px 34px,
+        #505ba0 35px 35px,
+        #505ba0 36px 36px,
+        #505ba0 37px 37px,
+        #505ba0 38px 38px,
+        #505ba0 39px 39px,
+        #505ba0 40px 40px,
+        #505ba0 41px 41px,
+        #505ba0 42px 42px,
+        #505ba0 43px 43px,
+        #505ba0 44px 44px,
+        #505ba0 45px 45px,
+        #505ba0 46px 46px,
+        #505ba0 47px 47px,
+        #505ba0 48px 48px,
+        #505ba0 49px 49px,
+        #505ba0 50px 50px,
+        #505ba0 51px 51px,
+        #505ba0 52px 52px,
+        #505ba0 53px 53px,
+        #505ba0 54px 54px,
+        #505ba0 55px 55px,
+        #505ba0 56px 56px,
+        #505ba0 57px 57px,
+        #505ba0 58px 58px;
 }
 
 .custom-entry-date > span {
@@ -1700,7 +1700,7 @@ a.button {
 }
 
 a.button:hover {
-    color: $call-to-action-btn-hover;
+    color: #6081a7;
 }
 
 a.button::after {
@@ -1719,8 +1719,7 @@ a.read-more {
 --------------------------------------------------------------*/
 a.custom-logo-link {
     float: left;
-    // margin-top: 15px;
-    margin-top: 0px; // Fixes logo alignment
+    margin-top: 15px;
     margin-right: 15px;
 }
 
@@ -1728,8 +1727,7 @@ a.custom-logo-link {
     color: rgba(255, 255, 255, 0.64);
     font-size: 14px;
     font-weight: 400;
-    // letter-spacing: 2.2px;
-    letter-spacing: 0px; // Turns off wide letter spacing in the site title subheading
+    letter-spacing: 2.2px;
     margin-bottom: 0;
 }
 
@@ -1924,8 +1922,7 @@ a.quick-email,
 
 .top-news-title {
     background: $orange none repeat scroll 0 0;
-    // color: $white;
-    color: $black; // Replacing colors to improve contrast
+    color: $white;
     display: block;
     float: left;
     font-size: 16px;
@@ -2010,12 +2007,8 @@ a.quick-email,
 }
 
 .site-branding img {
-    // margin-top: 5px;
-    margin-top: 0px; // Fixes logo alignment
+    margin-top: 5px;
     vertical-align: middle;
-    // Logo size limitation
-    max-height: 64px;
-    width: auto;
 }
 
 .site-branding {
@@ -2101,7 +2094,7 @@ a.quick-email,
     -webkit-transition:
         -webkit-transform 0.5s ease,
         opacity 0.2s ease;
-    background-color: $blue;
+    background-color: #179bd9;
     padding: 5px 20px 0;
 }
 
@@ -2307,10 +2300,6 @@ a.quick-email,
     content: '\f099';
 }
 
-.university_hub_widget_social ul li a[href*='x.com']::before {
-    content: '\e61b';
-}
-
 .university_hub_widget_social ul li a[href*='linkedin.com']::before {
     content: '\f0e1';
 }
@@ -2427,10 +2416,6 @@ a.quick-email,
 
 .university_hub_widget_social ul li a[href*='twitter.com'] {
     background-color: #00aced;
-}
-
-.university_hub_widget_social ul li a[href*='x.com'] {
-    background-color: #000000;
 }
 
 .university_hub_widget_social ul li a[href*='plus.google.com'] {
@@ -2649,7 +2634,7 @@ a.quick-email,
     font-size: 23px;
     line-height: 1.2;
     margin-bottom: 0;
-    background: $blue-rgba none repeat scroll 0 0;
+    background: rgba(23, 155, 215, 1) none repeat scroll 0 0;
     padding: 10px 20px 10px;
 }
 
@@ -2676,8 +2661,7 @@ a.quick-email,
 .slider-buttons a {
     background: $white;
     border: none;
-    // color: $white;
-    color: $black; // Replacing colors to improve contrast
+    color: $white;
     display: inline-block;
     overflow: hidden;
     padding: 8px 25px;
@@ -2742,8 +2726,7 @@ a.quick-email,
 #main-slider .cycle-next {
     background: $orange;
     top: 21px;
-    // color: $white;
-    color: $black; // Replacing colors to improve contrast
+    color: $white;
     cursor: pointer;
     display: block;
     font-size: 28px;
@@ -2924,7 +2907,7 @@ a.quick-email,
 ## Footer Style By WEN Themes
 --------------------------------------------------------------*/
 #colophon {
-    background-color: $footer-bg;
+    background-color: #031358;
     clear: both;
     color: rgba(255, 255, 255, 0.75);
     font-size: 14px;
@@ -3107,7 +3090,7 @@ a.quick-email,
 --------------------------------------------------------------*/
 /*Basic Breadcrumb */
 #breadcrumb {
-    color: $breadcrumbs;
+    color: #a0c5e8;
     padding: 18px 0;
     width: 100%;
     overflow: hidden;
@@ -3143,7 +3126,7 @@ a.quick-email,
 
 #breadcrumb a:hover,
 #breadcrumb .breadcrumb-trail li:hover::after {
-    color: $breadcrumbs;
+    color: #a0c5e8;
 }
 
 /*Error 404 Page*/
@@ -3251,7 +3234,7 @@ div.wpcf7 {
 #front-page-home-sections .section-title,
 #university-hub-front-page-widgets .widget-title {
     border-left: 4px solid $orange;
-    color: $navy-blue;
+    color: #00387d;
     display: inline-block;
     font-size: 24px;
     line-height: 1.1;
@@ -3481,7 +3464,7 @@ div.wpcf7 {
     display: block;
     height: 100%;
     width: 100%;
-    background: $blue-rgba none repeat scroll 0 0;
+    background: rgba(23, 155, 215, 1) none repeat scroll 0 0;
     top: 0;
     position: absolute;
     z-index: 8;
@@ -3797,7 +3780,7 @@ a.more {
 }
 
 .home-section-team .team-title a {
-    color: $navy-blue;
+    color: #00387d;
 }
 
 .home-section-team .team-title a:hover {
@@ -4099,64 +4082,64 @@ a.more {
     overflow: hidden;
     width: 73px;
     text-shadow:
-        $calendar-shades 1px 1px,
-        $calendar-shades 2px 2px,
-        $calendar-shades 3px 3px,
-        $calendar-shades 4px 4px,
-        $calendar-shades 5px 5px,
-        $calendar-shades 6px 6px,
-        $calendar-shades 7px 7px,
-        $calendar-shades 8px 8px,
-        $calendar-shades 9px 9px,
-        $calendar-shades 10px 10px,
-        $calendar-shades 11px 11px,
-        $calendar-shades 12px 12px,
-        $calendar-shades 13px 13px,
-        $calendar-shades 14px 14px,
-        $calendar-shades 15px 15px,
-        $calendar-shades 16px 16px,
-        $calendar-shades 17px 17px,
-        $calendar-shades 18px 18px,
-        $calendar-shades 19px 19px,
-        $calendar-shades 20px 20px,
-        $calendar-shades 21px 21px,
-        $calendar-shades 22px 22px,
-        $calendar-shades 23px 23px,
-        $calendar-shades 24px 24px,
-        $calendar-shades 25px 25px,
-        $calendar-shades 26px 26px,
-        $calendar-shades 27px 27px,
-        $calendar-shades 28px 28px,
-        $calendar-shades 29px 29px,
-        $calendar-shades 30px 30px,
-        $calendar-shades 31px 31px,
-        $calendar-shades 32px 32px,
-        $calendar-shades 33px 33px,
-        $calendar-shades 34px 34px,
-        $calendar-shades 35px 35px,
-        $calendar-shades 36px 36px,
-        $calendar-shades 37px 37px,
-        $calendar-shades 38px 38px,
-        $calendar-shades 39px 39px,
-        $calendar-shades 40px 40px,
-        $calendar-shades 41px 41px,
-        $calendar-shades 42px 42px,
-        $calendar-shades 43px 43px,
-        $calendar-shades 44px 44px,
-        $calendar-shades 45px 45px,
-        $calendar-shades 46px 46px,
-        $calendar-shades 47px 47px,
-        $calendar-shades 48px 48px,
-        $calendar-shades 49px 49px,
-        $calendar-shades 50px 50px,
-        $calendar-shades 51px 51px,
-        $calendar-shades 52px 52px,
-        $calendar-shades 53px 53px,
-        $calendar-shades 54px 54px,
-        $calendar-shades 55px 55px,
-        $calendar-shades 56px 56px,
-        $calendar-shades 57px 57px,
-        $calendar-shades 58px 58px;
+        #505ba0 1px 1px,
+        #505ba0 2px 2px,
+        #505ba0 3px 3px,
+        #505ba0 4px 4px,
+        #505ba0 5px 5px,
+        #505ba0 6px 6px,
+        #505ba0 7px 7px,
+        #505ba0 8px 8px,
+        #505ba0 9px 9px,
+        #505ba0 10px 10px,
+        #505ba0 11px 11px,
+        #505ba0 12px 12px,
+        #505ba0 13px 13px,
+        #505ba0 14px 14px,
+        #505ba0 15px 15px,
+        #505ba0 16px 16px,
+        #505ba0 17px 17px,
+        #505ba0 18px 18px,
+        #505ba0 19px 19px,
+        #505ba0 20px 20px,
+        #505ba0 21px 21px,
+        #505ba0 22px 22px,
+        #505ba0 23px 23px,
+        #505ba0 24px 24px,
+        #505ba0 25px 25px,
+        #505ba0 26px 26px,
+        #505ba0 27px 27px,
+        #505ba0 28px 28px,
+        #505ba0 29px 29px,
+        #505ba0 30px 30px,
+        #505ba0 31px 31px,
+        #505ba0 32px 32px,
+        #505ba0 33px 33px,
+        #505ba0 34px 34px,
+        #505ba0 35px 35px,
+        #505ba0 36px 36px,
+        #505ba0 37px 37px,
+        #505ba0 38px 38px,
+        #505ba0 39px 39px,
+        #505ba0 40px 40px,
+        #505ba0 41px 41px,
+        #505ba0 42px 42px,
+        #505ba0 43px 43px,
+        #505ba0 44px 44px,
+        #505ba0 45px 45px,
+        #505ba0 46px 46px,
+        #505ba0 47px 47px,
+        #505ba0 48px 48px,
+        #505ba0 49px 49px,
+        #505ba0 50px 50px,
+        #505ba0 51px 51px,
+        #505ba0 52px 52px,
+        #505ba0 53px 53px,
+        #505ba0 54px 54px,
+        #505ba0 55px 55px,
+        #505ba0 56px 56px,
+        #505ba0 57px 57px,
+        #505ba0 58px 58px;
 }
 
 .home-section-news-and-events .custom-entry-date > span {
@@ -5850,8 +5833,7 @@ a.more {
     }
 
     .slider-buttons a {
-        // color: $white;
-        color: $black; // Replacing colors to improve contrast
+        color: $white;
     }
 
     #university-hub-services.home-section-services .services-item {
