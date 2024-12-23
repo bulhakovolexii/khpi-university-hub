@@ -29,6 +29,7 @@ const exclusions = [
     '.git',
     '.gitignore',
     '.env',
+    'megamenu-themes',
     themeName,
 ]
 
