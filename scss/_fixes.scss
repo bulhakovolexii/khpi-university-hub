@@ -14,7 +14,7 @@ hr.wp-block-separator {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation ul ul {
-    background-color: $blue;
+    background-color: $blue; // main & top menus dropdown bg
 }
 
 /*--------------------------------------------------------------
@@ -23,6 +23,12 @@ hr.wp-block-separator {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+#primary article.hentry {
+    box-shadow: none; // removes border on main page content
+    padding: 0;
+}
+
+// replace color of calendar shades
 .custom-entry-date span.entry-day {
     text-shadow:
         $khpi-red-600 1px 1px,
@@ -90,7 +96,7 @@ hr.wp-block-separator {
 --------------------------------------------------------------*/
 /*buttons*/
 a.button:hover {
-    color: $khpi-red-900;
+    color: $khpi-red-900; // text color in call-to-action btn on hover
 }
 
 /*--------------------------------------------------------------
@@ -131,6 +137,15 @@ a.custom-logo-link {
     background-color: #000000;
 }
 
+/*telegram*/
+.university_hub_widget_social ul li a[href*='t.me']::before {
+    content: '\f2c6';
+}
+
+.university_hub_widget_social ul li a[href*='t.me'] {
+    background-color: #24a1de;
+}
+
 /*--------------------------------------------------------------
 ## Main slider Style By WEN Themes
 --------------------------------------------------------------*/
@@ -146,6 +161,14 @@ a.custom-logo-link {
 #main-slider .cycle-prev,
 #main-slider .cycle-next {
     color: $black; // Replacing colors to improve contrast
+}
+
+/*--------------------------------------------------------------
+## Sidebar Style By WEN Themes
+--------------------------------------------------------------*/
+.sidebar .widget {
+    box-shadow: none; // removes border of sidebar widgets
+    padding: 0;
 }
 
 /*--------------------------------------------------------------
@@ -174,6 +197,9 @@ a.custom-logo-link {
 #front-page-home-sections .section-title,
 #university-hub-front-page-widgets .widget-title {
     color: $navy-blue;
+    // removes icon-like border on Latest News heading
+    border-left: none;
+    padding-left: 0;
 }
 
 /*--------------------------------------------------------------
@@ -181,6 +207,14 @@ a.custom-logo-link {
 --------------------------------------------------------------*/
 .home-section-latest-news .read-more-button::after {
     background: rgba(160, 0, 27, 1) none repeat scroll 0 0; // same as $khpi-red-900 but rgba
+}
+
+.home-section-latest-news .latest-news-inner-wrapper {
+    box-shadow: none; // removes borders on home page latest-news
+}
+
+.home-section-latest-news .latest-news-text-wrap {
+    padding: 15px 0px; // removes side paddings on home page latest-news
 }
 
 /*--------------------------------------------------------------
@@ -193,6 +227,24 @@ a.custom-logo-link {
 /*--------------------------------------------------------------
 ### Featured News Events section style By WEN Themes
 --------------------------------------------------------------*/
+// removes icons of heading recent news and events
+.home-section-news-and-events h2::before {
+    margin-right: 0;
+}
+
+.home-section-news-and-events .recent-news h2::before {
+    content: '';
+}
+
+.home-section-news-and-events .recent-events h2::before {
+    content: '';
+}
+
+.home-section-news-and-events .news-content {
+    padding: 7px 0px 14px; // removes side paddings on home page news
+}
+
+// replace color of calendar shades
 .home-section-news-and-events .custom-entry-date span.entry-day {
     text-shadow:
         $khpi-red-600 1px 1px,
@@ -259,6 +311,13 @@ a.custom-logo-link {
 ##  Media Queries By WEN Themes
 --------------------------------------------------------------*/
 /* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 1000px) {
+    #top-nav .is-open .menu-inside-wrapper {
+        z-index: 100000; // Fixed hidden dropdown of top header
+    }
+}
+
+/* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
     /*footer widget area*/
     .slider-buttons a {
@@ -292,5 +351,37 @@ a.custom-logo-link {
     & > * {
         position: relative;
         z-index: 2;
+    }
+}
+
+// Colored links in content area
+.content-area {
+    a {
+        color: $khpi-red-900;
+        text-decoration: inherit;
+    }
+
+    a:visited {
+        color: $khpi-red-900;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        color: $khpi-red-400;
+    }
+}
+
+// Styling default editor tables
+.wp-block-table {
+    & thead {
+        background-color: $khpi-black-200;
+
+        & tr:last-child {
+            border-bottom: 3px solid;
+        }
+    }
+    & tr:nth-child(even) {
+        background-color: $khpi-black-200;
     }
 }
