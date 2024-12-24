@@ -240,6 +240,15 @@ a.custom-logo-link {
     background-color: #24a1de;
 }
 
+/*remove all bg-colors*/
+.university_hub_widget_social ul li a {
+    background-color: $khpi-red-900 !important;
+}
+
+.university_hub_widget_social ul li a:hover {
+    background-color: $khpi-yellow-500 !important;
+}
+
 /*--------------------------------------------------------------
 ## Main slider Style By WEN Themes
 --------------------------------------------------------------*/
