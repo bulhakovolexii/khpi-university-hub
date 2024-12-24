@@ -106,6 +106,11 @@ input[type='submit']:active {
     color: $khpi-red-900 !important;
 }
 
+.page-header {
+    box-shadow: none;
+    padding: 5px 30px 5px 0px;
+}
+
 #primary article.hentry {
     box-shadow: none; // Removes border on main page content
     padding: 0;
