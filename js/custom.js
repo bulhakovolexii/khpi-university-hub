@@ -12,9 +12,9 @@ function toggleMenu() {
 
     const containerWidth = container.offsetWidth
 
-    if (viewport > 1300 && menuWidth > containerWidth - 250) {
+    if (viewport > 1300 && menuWidth > containerWidth - 256) {
         navbar.classList.add('menu-hidden')
-    } else if (viewport > 1000 && menuWidth > containerWidth - 200) {
+    } else if (viewport > 1000 && menuWidth > containerWidth - 206) {
         navbar.classList.add('menu-hidden')
     } else {
         navbar.classList.remove('menu-hidden')
