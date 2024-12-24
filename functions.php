@@ -171,3 +171,55 @@ function enqueue_child_theme_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_theme_scripts');
+
+if (!function_exists('khpi_university_hub_custom_content_width')):
+    /**
+     * Custom content width.
+     *
+     * @since 1.0.0
+     */
+    function khpi_university_hub_custom_content_width()
+    {
+        global $post, $wp_query, $content_width;
+
+        $global_layout = university_hub_get_option('global_layout');
+        $global_layout = apply_filters(
+            'university_hub_filter_theme_global_layout',
+            $global_layout
+        );
+
+        // Check if single.
+        if ($post && is_singular()) {
+            $post_options = get_post_meta(
+                $post->ID,
+                'university_hub_theme_settings',
+                true
+            );
+            if (
+                isset($post_options['post_layout']) &&
+                !empty($post_options['post_layout'])
+            ) {
+                $global_layout = esc_attr($post_options['post_layout']);
+            }
+        }
+        switch ($global_layout) {
+            case 'no-sidebar':
+                $content_width = 1200;
+                break;
+
+            case 'three-columns':
+                $content_width = 585;
+                break;
+
+            case 'left-sidebar':
+            case 'right-sidebar':
+                $content_width = 831;
+                break;
+
+            default:
+                break;
+        }
+    }
+endif;
+
+add_filter('template_redirect', 'khpi_university_hub_custom_content_width', 20);
