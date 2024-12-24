@@ -457,6 +457,12 @@ a.custom-logo-link {
     #main-slider .cycle-next {
         font-size: 16px;
     }
+    #university-hub-services.home-section-services .services-item,
+    .home-section-latest-news .latest-news-item,
+    #latest-news.home-section-latest-news .latest-news-item,
+    .home-section-featured-blocks .inner-wrapper article {
+        max-width: unset;
+    }
 }
 
 /*--------------------------------------------------------------
