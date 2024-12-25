@@ -602,6 +602,23 @@ a.custom-logo-link {
     }
 }
 
+// extra links to news and events
+#more-events,
+#more-news {
+    text-align: right;
+    padding-top: 35px;
+    font-weight: 600;
+
+    a {
+        color: $khpi-red-900;
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+// style changes for light theme
 body {
     &.theme-light {
         .top-news-title {
@@ -693,6 +710,43 @@ body {
         .widget .wp-block-tag-cloud a:hover {
             border: 1px solid $khpi-red-900;
             color: $khpi-red-900;
+        }
+
+        // extra links to news and events
+        #more-events,
+        #more-news {
+            a {
+                color: $khpi-blue-600;
+            }
+        }
+
+        .home-section-news-and-events .block-meta span,
+        .home-section-news-and-events .block-meta a {
+            color: $khpi-blue-600;
+        }
+
+        .home-section-latest-news .latest-news-meta > span,
+        .home-section-latest-news .latest-news-meta > span a {
+            color: $khpi-blue-600;
+        }
+
+        .entry-footer,
+        .entry-footer a {
+            color: $khpi-blue-600 !important;
+        }
+
+        #breadcrumb {
+            background-color: $khpi-red-900;
+        }
+
+        #breadcrumb a,
+        #breadcrumb .breadcrumb-trail li::after {
+            color: $khpi-black-50;
+        }
+
+        #breadcrumb a:hover,
+        #breadcrumb .breadcrumb-trail li:hover::after {
+            color: $khpi-yellow-200;
         }
     }
 }

@@ -263,3 +263,9 @@ if (!function_exists('khpi_university_hub_custom_content_width')):
 endif;
 
 add_filter('template_redirect', 'khpi_university_hub_custom_content_width', 20);
+/**
+ * New footer hook
+ */
+
+// require_once get_stylesheet_directory_uri() . '/inc/new-footer.php';
+require_once get_theme_file_path('inc/new-footer.php');
