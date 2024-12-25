@@ -130,6 +130,46 @@ function child_theme_setup_editor_features()
 add_action('after_setup_theme', 'child_theme_setup_editor_features', 20);
 
 /**
+ * Adding a color palette switcher
+ */
+function register_theme_customizer($wp_customize)
+{
+    $wp_customize->add_setting('theme_palette', [
+        'default' => 'Dark',
+        'transport' => 'refresh',
+    ]);
+
+    $wp_customize->add_section('theme_options', [
+        'title' => 'Кольорова палітра',
+        'priority' => 30,
+    ]);
+
+    $wp_customize->add_control('theme_palette_control', [
+        'label' => 'Оберіть кольорову палітру',
+        'section' => 'theme_options',
+        'settings' => 'theme_palette',
+        'type' => 'radio',
+        'choices' => [
+            'dark' => 'Dark',
+            'light' => 'Light',
+        ],
+    ]);
+}
+add_action('customize_register', 'register_theme_customizer');
+
+function add_theme_body_class($classes)
+{
+    $theme_palette = get_theme_mod('theme_palette', 'default');
+
+    if ($theme_palette !== 'default') {
+        $classes[] = 'theme-' . $theme_palette;
+    }
+
+    return $classes;
+}
+add_filter('body_class', 'add_theme_body_class');
+
+/**
  * Enables theme color inheritance for qubely
  */
 function active_theme_preset()
