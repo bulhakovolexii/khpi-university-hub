@@ -678,7 +678,7 @@ body {
             a:hover,
             a:focus,
             a:active {
-                text-decoration: underline;
+                color: $khpi-red-500;
             }
 
             ul li::before {
