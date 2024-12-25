@@ -554,10 +554,6 @@ a.custom-logo-link {
 }
 
 @media only screen and (min-width: 1000px) {
-    #main-nav {
-        overflow-x: hidden;
-    }
-
     .header-search-box .search-box-wrap {
         position: absolute;
         z-index: 100;
@@ -589,6 +585,11 @@ a.custom-logo-link {
             box-shadow: none;
         }
 
+        .search-form input.search-field {
+            height: 15px;
+            padding: 10px 0px;
+        }
+
         .header-search-box .search-box-wrap {
             position: absolute;
             width: 0;
@@ -597,6 +598,101 @@ a.custom-logo-link {
         }
         .search-submit {
             display: none;
+        }
+    }
+}
+
+body {
+    &.theme-light {
+        .top-news-title {
+            color: $khpi-black-50;
+            background-color: $khpi-red-900;
+            &::after {
+                border-color: $khpi-red-900;
+            }
+        }
+
+        #masthead {
+            background-color: $khpi-black-50;
+        }
+
+        .site-title > a {
+            color: $khpi-black-900;
+        }
+
+        .site-description {
+            // same as $khpi-black-900 but with opacity
+            color: rgba(42, 42, 42, 0.64);
+        }
+
+        #quick-contact {
+            a,
+            span {
+                color: $khpi-black-900;
+            }
+
+            li::before {
+                color: $khpi-black-900;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            #main-nav {
+                border-top: 1px solid $khpi-black-200;
+                border-right: 1px solid $khpi-black-200;
+                border-left: 1px solid $khpi-black-200;
+            }
+        }
+
+        #footer-widgets {
+            background-color: $khpi-black-300;
+            // same as $khpi-black-900 but with opacity
+            color: rgba(42, 42, 42, 0.75);
+
+            .widget-title {
+                color: $khpi-black-900;
+            }
+
+            @media only screen and (max-width: 479px) {
+                .footer-widget-area:first-child {
+                    border-top: none;
+                }
+                .footer-widget-area {
+                    border-top: 1px solid $khpi-black-500;
+                }
+            }
+
+            p {
+                // same as $khpi-black-900 but with opacity
+                color: rgba(42, 42, 42, 0.75);
+            }
+
+            a {
+                color: $khpi-red-900;
+            }
+
+            a:visited {
+                color: $khpi-red-900;
+            }
+
+            a:hover,
+            a:focus,
+            a:active {
+                text-decoration: underline;
+            }
+
+            ul li::before {
+                color: $khpi-red-900;
+            }
+        }
+
+        .widget .wp-block-tag-cloud a {
+            border: 1px solid $khpi-black-500;
+        }
+
+        .widget .wp-block-tag-cloud a:hover {
+            border: 1px solid $khpi-red-900;
+            color: $khpi-red-900;
         }
     }
 }
