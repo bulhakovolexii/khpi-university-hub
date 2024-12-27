@@ -782,6 +782,14 @@ body {
         #colophon {
             background-color: $khpi-black-300;
             color: rgba(42, 42, 42, 0.64);
+
+            & a {
+                color: rgba(42, 42, 42, 0.64);
+            }
+
+            & a:hover {
+                color: rgba(42, 42, 42, 1);
+            }
         }
     }
     &.theme-light-alternative {
