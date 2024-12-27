@@ -840,8 +840,7 @@ body {
             color: $khpi-blue-600;
         }
 
-        .entry-footer,
-        .entry-footer a {
+        .entry-footer > span a {
             color: $khpi-blue-600 !important;
         }
 
