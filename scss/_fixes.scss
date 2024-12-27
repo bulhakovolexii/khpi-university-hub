@@ -825,8 +825,9 @@ body {
             color: $khpi-black-900; // Replacing colors to improve contrast
         }
 
-        extra links to news and events #more-events,
-        #more-news {
+        //extra links to news and events #more-events
+        #more-news,
+        #more-events {
             a {
                 color: $khpi-blue-600;
             }
