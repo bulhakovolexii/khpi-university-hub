@@ -103,12 +103,28 @@ $news_and_events_ecategory = university_hub_get_option(
 
 							<div class="event-post">
 								<div class="custom-entry-date">
+									<?php // Getting a setting from the Customizer
 
-				  					<?php if (has_post_thumbnail()): ?>
-				  						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail', [
-    'class' => 'alignleft',
-]); ?></a>
-				  					<?php endif; ?>
+
+         $news_display_style = get_theme_mod(
+             'home_news_display_style',
+             'calendar'
+         );
+         if ($news_display_style === 'calendar'): ?>
+    <span class="entry-month"><?php the_time(
+        _x('M', 'date format', 'university-hub')
+    ); ?></span>
+									<span class="entry-day"><?php the_time(
+             _x('d', 'date format', 'university-hub')
+         ); ?></span>
+<?php else: ?>
+    <?php if (has_post_thumbnail()): ?>
+        <a href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail('thumbnail', ['class' => 'alignleft']); ?>
+        </a>
+    <?php endif; ?>
+<?php endif;
+         ?>
 
 								</div>
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -126,10 +142,18 @@ $news_and_events_ecategory = university_hub_get_option(
 				<?php endif; ?>
 
                         <!-- more-events-link -->
-			<p id="more-events"><a href="category/anonsi/"><?php esc_html_e(
-       'Events',
-       'university-hub'
-   ); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i></a></p>
+			<?php if (!empty($news_and_events_ecategory)): ?>
+    <p id="more-events">
+        <a href="<?php echo esc_url(
+            get_category_link($news_and_events_ecategory)
+        ); ?>">
+            <?php esc_html_e(
+                'Events',
+                'university-hub'
+            ); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </p>
+<?php endif; ?>
 
 			</div><!-- .recent-news -->
 

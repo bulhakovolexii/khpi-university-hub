@@ -104,11 +104,21 @@ $latest_news_excerpt_length = university_hub_get_option(
 
 
                         <!-- more-news -->
-			<div class="clear:right;"></div>
-			<div><p id="more-news"><a href="category/novini/page/2/"><?php esc_html_e(
-       'Latest News',
-       'university-hub'
-   ); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i></a></p></div>
+<?php if (!empty($latest_news_category)): ?>
+    <div class="clear:right;"></div>
+    <div>
+        <p id="more-news">
+            <a href="<?php echo esc_url(
+                get_category_link($latest_news_category)
+            ); ?>">
+                <?php esc_html_e(
+                    'Latest News',
+                    'university-hub'
+                ); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </p>
+    </div>
+<?php endif; ?>
 
 
 		<?php endif; ?>

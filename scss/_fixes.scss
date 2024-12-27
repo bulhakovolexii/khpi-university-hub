@@ -21,6 +21,17 @@ hr.wp-block-separator {
 --------------------------------------------------------------*/
 body {
     color: $khpi-black-900;
+    font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0 0 12px 0;
 }
 
 h1,
@@ -35,16 +46,6 @@ h6 {
 
 p {
     color: $khpi-black-900;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-    margin: 0 0 7px 0;
 }
 
 /*--------------------------------------------------------------
@@ -89,6 +90,12 @@ input[type='submit']:active {
     top: 16px;
 }
 
+@media only screen and (min-width: 1000px) {
+    #primary-menu > li > a {
+        border-bottom: none;
+    }
+}
+
 /** pagination **/
 .post-navigation .nav-links a,
 .post-navigation .nav-links a:hover {
@@ -101,9 +108,9 @@ input[type='submit']:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.entry-footer,
-.entry-footer a {
-    color: $khpi-red-900 !important;
+#primary article.hentry {
+    box-shadow: none; // Removes border on main page content
+    padding: 0;
 }
 
 .page-header {
@@ -111,9 +118,8 @@ input[type='submit']:active {
     padding: 5px 30px 5px 0px;
 }
 
-#primary article.hentry {
-    box-shadow: none; // Removes border on main page content
-    padding: 0;
+.entry-footer > span a {
+    color: $khpi-red-900;
 }
 
 // Replace color of calendar shades
@@ -194,12 +200,12 @@ a.custom-logo-link {
     margin-top: 0px; // Fixes logo alignment
 }
 
-#header-social .university_hub_widget_social ul li a:hover {
-    background: none !important;
-}
-
 .site-description {
     letter-spacing: 0px; // Turns off wide letter spacing in the site title subheading
+}
+
+#header-social .university_hub_widget_social ul li a:hover {
+    background: none !important;
 }
 
 .top-news-title {
@@ -215,6 +221,7 @@ a.custom-logo-link {
 
 #top-nav ul ul {
     background-color: $blue;
+    min-width: 320px;
 }
 
 .search-form .search-submit:hover,
@@ -223,9 +230,18 @@ a.custom-logo-link {
     background: none;
 }
 
+/*Top Header*/
+#tophead {
+    font-size: 14px;
+}
+
 /*--------------------------------------------------------------
 ## Social Links Style By WEN Themes
 --------------------------------------------------------------*/
+.university_hub_widget_social ul li a::before {
+    text-shadow: none;
+}
+
 /*x.com*/
 .university_hub_widget_social ul li a[href*='x.com']::before {
     content: '\e61b';
@@ -253,8 +269,9 @@ a.custom-logo-link {
     background-color: $khpi-yellow-500 !important;
 }
 
-.university_hub_widget_social ul li a:hover {
-    background-color: $khpi-yellow-500 !important;
+.university_hub_widget_social ul li a:hover::before {
+    transition: all 0.5s ease-out 0s;
+    color: $khpi-black-900 !important;
 }
 
 /*--------------------------------------------------------------
@@ -265,14 +282,13 @@ a.custom-logo-link {
 }
 
 .slider-buttons .button-primary {
-    background: $khpi-red-900;
-    border-color: $khpi-red-900;
+    color: $khpi-black-900; // Replacing colors to improve contrast
 }
 
 .slider-buttons a:hover {
     opacity: 1;
-    background: $khpi-yellow-500;
-    color: $black; // Replacing colors to improve contrast
+    background: $khpi-red-900;
+    color: $khpi-black-50; // Replacing colors to improve contrast
 }
 
 /*Slider cycle next / previous*/
@@ -285,6 +301,16 @@ a.custom-logo-link {
 /*--------------------------------------------------------------
 ## Sidebar Style By WEN Themes
 --------------------------------------------------------------*/
+@media only screen and (min-width: 1024px) {
+    #sidebar-primary {
+        padding-left: 30px;
+    }
+
+    #sidebar-secondary {
+        padding-right: 30px;
+    }
+}
+
 .sidebar .widget {
     box-shadow: none; // Removes border of sidebar widgets
     padding: 0;
@@ -300,11 +326,19 @@ a.custom-logo-link {
     color: $khpi-red-400;
 }
 
+.sidebar .widget .wp-block-tag-cloud a:hover {
+    color: $khpi-red-900;
+}
+
 /*--------------------------------------------------------------
 ## Footer Style By WEN Themes
 --------------------------------------------------------------*/
 #colophon {
     background-color: #1d1d1d; // khpi-black-1000;
+}
+
+#footer-widgets .widget-title {
+    font-weight: 500;
 }
 
 /*Scrollup Style*/
@@ -316,6 +350,15 @@ a.custom-logo-link {
     background-color: $orange;
 }
 
+.scrollup i {
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.scrollup:hover i {
+    transition: all 0.5s ease-in-out 0s;
+    color: $khpi-black-900;
+}
+
 /*--------------------------------------------------------------
 ## Inner Pages Style By WEN Themes
 --------------------------------------------------------------*/
@@ -325,9 +368,12 @@ a.custom-logo-link {
     padding: 10px 0;
 }
 
-#breadcrumb a:hover,
-#breadcrumb .breadcrumb-trail li:hover::after {
+#breadcrumb a:hover {
     color: $khpi-yellow-200;
+}
+
+#breadcrumb .breadcrumb-trail li:hover::after {
+    color: rgba(255, 255, 255, 0.76);
 }
 
 /*--------------------------------------------------------------
@@ -356,13 +402,23 @@ a.custom-logo-link {
     padding: 15px 0px; // Removes side paddings on home page latest-news
 }
 
-.home-section-latest-news .latest-news-meta > span,
+.home-section-latest-news .latest-news-meta > span {
+    color: $khpi-black-900;
+}
+
 .home-section-latest-news .latest-news-meta > span a {
     color: $khpi-red-900;
 }
 
 .home-section-latest-news .latest-news-meta > span a:hover {
     text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+## call to action style By WEN Themes
+--------------------------------------------------------------*/
+#front-page-home-sections .home-section-call-to-action .section-title {
+    font-weight: 500;
 }
 
 /*--------------------------------------------------------------
@@ -392,8 +448,7 @@ a.custom-logo-link {
     padding: 7px 0px 14px; // Removes side paddings on home page news
 }
 
-.home-section-news-and-events .block-meta span,
-.home-section-news-and-events .block-meta a {
+.home-section-news-and-events .block-meta span > a {
     color: $khpi-red-900;
 }
 
@@ -479,6 +534,7 @@ a.custom-logo-link {
     #main-slider .cycle-next {
         font-size: 16px;
     }
+
     #university-hub-services.home-section-services .services-item,
     .home-section-latest-news .latest-news-item,
     #latest-news.home-section-latest-news .latest-news-item,
@@ -566,7 +622,7 @@ a.custom-logo-link {
 
         #show-search {
             display: block;
-            background: $khpi-black-50;
+            background: transparent;
             color: $khpi-black-900;
             font: 14px/1.3 FontAwesome;
             height: 37px;
@@ -618,17 +674,17 @@ a.custom-logo-link {
     }
 }
 
+// more news alignment fix
+.inner-wrapper.latest-news-wrapper::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
 // style changes for light theme
 body {
-    &.theme-light {
-        .top-news-title {
-            color: $khpi-black-50;
-            background-color: $khpi-red-900;
-            &::after {
-                border-color: $khpi-red-900;
-            }
-        }
-
+    &.theme-light,
+    &.theme-light-alternative {
         #masthead {
             background-color: $khpi-black-50;
         }
@@ -655,14 +711,13 @@ body {
 
         @media only screen and (min-width: 1000px) {
             #main-nav {
-                border-top: 1px solid $khpi-black-200;
-                border-right: 1px solid $khpi-black-200;
-                border-left: 1px solid $khpi-black-200;
+                // box-shadow: inset 0px 0px 0px 1px $khpi-black-200;
+                background-color: $khpi-black-200;
             }
         }
 
         #footer-widgets {
-            background-color: $khpi-black-300;
+            background-color: $khpi-black-200;
             // same as $khpi-black-900 but with opacity
             color: rgba(42, 42, 42, 0.75);
 
@@ -707,25 +762,61 @@ body {
             border: 1px solid $khpi-black-500;
         }
 
-        .widget .wp-block-tag-cloud a:hover {
+        .widget .wp-block-tag-cloud a:hover,
+        #footer-widgets .widget .wp-block-tag-cloud a:hover {
             border: 1px solid $khpi-red-900;
             color: $khpi-red-900;
         }
 
-        // extra links to news and events
-        #more-events,
+        #colophon {
+            background-color: $khpi-black-300;
+            color: rgba(42, 42, 42, 0.64);
+        }
+    }
+    &.theme-light-alternative {
+        .top-news-title {
+            color: $khpi-black-50;
+            background-color: $khpi-red-900;
+            &::after {
+                border-color: $khpi-red-900;
+            }
+        }
+
+        .slider-buttons .button-primary {
+            background: $khpi-red-900;
+            border-color: $khpi-red-900;
+            color: $khpi-black-50; // Replacing colors to improve contrast
+        }
+
+        .slider-buttons a:hover {
+            opacity: 1;
+            background: $khpi-yellow-500;
+            color: $khpi-black-900; // Replacing colors to improve contrast
+        }
+
+        #main-slider .cycle-prev,
+        #main-slider .cycle-next {
+            background-color: $khpi-red-900;
+            color: $khpi-black-50; // Replacing colors to improve contrast
+        }
+
+        #main-slider .cycle-prev:hover,
+        #main-slider .cycle-next:hover {
+            background-color: $khpi-yellow-500;
+            color: $khpi-black-900; // Replacing colors to improve contrast
+        }
+
+        extra links to news and events #more-events,
         #more-news {
             a {
                 color: $khpi-blue-600;
             }
         }
 
-        .home-section-news-and-events .block-meta span,
-        .home-section-news-and-events .block-meta a {
+        .home-section-news-and-events .block-meta > span a {
             color: $khpi-blue-600;
         }
 
-        .home-section-latest-news .latest-news-meta > span,
         .home-section-latest-news .latest-news-meta > span a {
             color: $khpi-blue-600;
         }
@@ -744,9 +835,12 @@ body {
             color: $khpi-black-50;
         }
 
-        #breadcrumb a:hover,
-        #breadcrumb .breadcrumb-trail li:hover::after {
+        #breadcrumb a:hover {
             color: $khpi-yellow-200;
+        }
+
+        #breadcrumb .breadcrumb-trail li:hover::after {
+            color: $khpi-black-50;
         }
     }
 }
