@@ -269,7 +269,10 @@ a.custom-logo-link {
     background-color: $khpi-yellow-500 !important;
 }
 
-.university_hub_widget_social ul li a:hover::before {
+#colophon .university_hub_widget_social ul li a:hover::before,
+#sidebar-primary .university_hub_widget_social ul li a:hover::before,
+#sidebar-secondary .university_hub_widget_social ul li a:hover::before,
+#footer-widgets .university_hub_widget_social ul li a:hover::before {
     transition: all 0.5s ease-out 0s;
     color: $khpi-black-900 !important;
 }
@@ -324,6 +327,10 @@ a.custom-logo-link {
 .sidebar .widget a:hover,
 .sidebar .widget a:active {
     color: $khpi-red-400;
+}
+
+.sidebar .widget .wp-block-tag-cloud a {
+    color: $khpi-red-900;
 }
 
 .sidebar .widget .wp-block-tag-cloud a:hover {
@@ -446,6 +453,10 @@ a.custom-logo-link {
 
 .home-section-news-and-events .news-content {
     padding: 7px 0px 14px; // Removes side paddings on home page news
+}
+
+.home-section-news-and-events .block-meta {
+    font-size: 13px;
 }
 
 .home-section-news-and-events .block-meta span > a {

@@ -37,6 +37,13 @@ add_action(
 function child_theme_enqueue_styles()
 {
     wp_enqueue_style(
+        'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        [],
+        filemtime(get_stylesheet_directory() . '/style.css')
+    );
+
+    wp_enqueue_style(
         'child-theme-style',
         get_stylesheet_directory_uri() . '/css/blocks.css',
         [],
@@ -53,7 +60,7 @@ function child_theme_enqueue_styles()
         '6.5.0'
     );
 }
-add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles');
+add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles', 20);
 
 /**
  * Adding child theme block editor settings.
