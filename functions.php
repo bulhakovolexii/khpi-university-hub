@@ -37,6 +37,13 @@ add_action(
 function child_theme_enqueue_styles()
 {
     wp_enqueue_style(
+        'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        [],
+        filemtime(get_stylesheet_directory() . '/style.css')
+    );
+
+    wp_enqueue_style(
         'child-theme-style',
         get_stylesheet_directory_uri() . '/css/blocks.css',
         [],
@@ -53,7 +60,7 @@ function child_theme_enqueue_styles()
         '6.5.0'
     );
 }
-add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles');
+add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles', 20);
 
 /**
  * Adding child theme block editor settings.
@@ -152,6 +159,7 @@ function register_theme_customizer($wp_customize)
         'choices' => [
             'dark' => 'Dark',
             'light' => 'Light',
+            'light-alternative' => 'Light Alternative',
         ],
     ]);
 }
@@ -263,3 +271,33 @@ if (!function_exists('khpi_university_hub_custom_content_width')):
 endif;
 
 add_filter('template_redirect', 'khpi_university_hub_custom_content_width', 20);
+/**
+ * New footer hook
+ */
+
+// require_once get_stylesheet_directory_uri() . '/inc/new-footer.php';
+require_once get_theme_file_path('inc/new-footer.php');
+
+/**
+ * Choosing between calendars and thumbnails in News and Events
+ */
+function khpi_university_hub_customize_register($wp_customize)
+{
+    // Adding a display selection setting to an existing section
+    $wp_customize->add_setting('home_news_display_style', [
+        'default' => 'calendar', // Default value
+        'sanitize_callback' => 'sanitize_text_field', // Data verificationх
+    ]);
+
+    // Adding a control to the section_home_news_and_events section
+    $wp_customize->add_control('home_news_display_style', [
+        'label' => __('News Display Style', 'university-hub'),
+        'section' => 'section_home_news_and_events', // Specifying an existing section
+        'type' => 'radio',
+        'choices' => [
+            'calendar' => __('Calendar', 'university-hub'),
+            'thumbnail' => __('Thumbnail', 'university-hub'),
+        ],
+    ]);
+}
+add_action('customize_register', 'khpi_university_hub_customize_register');
