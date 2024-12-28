@@ -342,6 +342,10 @@ a.custom-logo-link {
 --------------------------------------------------------------*/
 #colophon {
     background-color: #1d1d1d; // khpi-black-1000;
+
+    & a:hover {
+        color: $khpi-black-50;
+    }
 }
 
 #footer-widgets .widget-title {
@@ -673,7 +677,7 @@ a.custom-logo-link {
 #more-events,
 #more-news {
     text-align: right;
-    padding-top: 35px;
+    padding-top: 40px;
     font-weight: 600;
 
     a {
@@ -683,6 +687,10 @@ a.custom-logo-link {
             text-decoration: underline;
         }
     }
+}
+
+#more-news {
+    padding-top: 0;
 }
 
 // more news alignment fix
