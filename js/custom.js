@@ -34,7 +34,17 @@ function toggleMenuManually() {
 }
 
 window.addEventListener('load', () => {
-    toggleMenu()
-    addToggleButton()
+    const searchField = document.querySelector('#main-nav .header-search-box')
+
+    if (searchField) {
+        toggleMenu()
+        addToggleButton()
+    }
 })
-window.addEventListener('resize', toggleMenu)
+window.addEventListener('resize', () => {
+    const searchField = document.querySelector('#main-nav .header-search-box')
+
+    if (searchField) {
+        toggleMenu()
+    }
+})
