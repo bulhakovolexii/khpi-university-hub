@@ -280,6 +280,11 @@ a.custom-logo-link {
 /*--------------------------------------------------------------
 ## Main slider Style By WEN Themes
 --------------------------------------------------------------*/
+#main-slider img {
+    aspect-ratio: 8 / 3;
+    object-fit: cover;
+}
+
 #main-slider h3 {
     background: rgba(160, 0, 27, 1) none repeat scroll 0 0; // Same as $khpi-red-900 but rgba
 }
@@ -298,7 +303,10 @@ a.custom-logo-link {
 #main-slider .cycle-prev,
 #main-slider .cycle-next {
     color: $black; // Replacing colors to improve contrast
-    font-size: 29px;
+    i {
+        line-height: 1.2;
+        font-size: 22px;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -401,6 +409,11 @@ a.custom-logo-link {
 /*--------------------------------------------------------------
 ### Latest News post section style By WEN Themes
 --------------------------------------------------------------*/
+.home-section-latest-news .latest-news-item img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
 .home-section-latest-news .read-more-button::after {
     background: rgba(160, 0, 27, 1) none repeat scroll 0 0; // Same as $khpi-red-900 but rgba
 }
@@ -453,6 +466,11 @@ a.custom-logo-link {
 
 .home-section-news-and-events .recent-events h2::before {
     content: '';
+}
+
+.home-section-news-and-events .news-post img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
 }
 
 .home-section-news-and-events .news-content {
@@ -603,6 +621,38 @@ a.custom-logo-link {
     a:active {
         text-decoration: underline;
     }
+
+    .navigation.posts-navigation .nav-links a {
+        &:visited {
+            color: $khpi-black-50;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $khpi-yellow-500;
+            color: $khpi-black-900;
+            text-decoration: none;
+        }
+    }
+
+    .page-links {
+        span,
+        a {
+            font-weight: bold;
+            padding: 0px 5px;
+            background-color: $khpi-yellow-500;
+        }
+        a {
+            color: $khpi-black-50;
+            background-color: $khpi-red-900;
+            &:hover,
+            &:focus {
+                background-color: $khpi-yellow-500;
+                color: $khpi-black-900;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 // Styling default editor tables
@@ -634,6 +684,7 @@ a.custom-logo-link {
 
     #main-nav.menu-hidden {
         position: relative;
+        padding-right: 40px;
 
         #show-search {
             display: block;
@@ -698,6 +749,36 @@ a.custom-logo-link {
     content: '';
     clear: both;
     display: block;
+}
+
+// recent events alignment fix
+.recent-events .event-post {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    h3 {
+        padding-top: 0px;
+    }
+}
+
+// recent posts (widget) alignment fix
+.recent-posts-text-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-entry-date {
+    grid-row: span 2;
+}
+
+.custom-entry-date img {
+    margin: 0;
+}
+
+// last events alignment fix
+.home-section-latest-news .latest-news-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 // style changes for light theme
