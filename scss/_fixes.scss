@@ -410,6 +410,7 @@ a.custom-logo-link {
 ### Latest News post section style By WEN Themes
 --------------------------------------------------------------*/
 .home-section-latest-news .latest-news-item img {
+    width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
@@ -469,6 +470,7 @@ a.custom-logo-link {
 }
 
 .home-section-news-and-events .news-post img {
+    width: 100%;
     aspect-ratio: 3 / 2;
     object-fit: cover;
 }
