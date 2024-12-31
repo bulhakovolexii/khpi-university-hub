@@ -419,6 +419,13 @@ a.custom-logo-link {
     background: rgba(160, 0, 27, 1) none repeat scroll 0 0; // Same as $khpi-red-900 but rgba
 }
 
+.read-more-button {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .home-section-latest-news .latest-news-inner-wrapper {
     box-shadow: none; // Removes borders on home page latest-news
 }
