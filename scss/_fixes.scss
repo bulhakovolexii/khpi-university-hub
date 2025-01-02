@@ -633,7 +633,8 @@ a.custom-logo-link {
         text-decoration: underline;
     }
 
-    .navigation.posts-navigation .nav-links a {
+    .navigation.posts-navigation .nav-links a,
+    .navigation.pagination .nav-links a {
         &:visited {
             color: $khpi-black-50;
         }
