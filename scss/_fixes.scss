@@ -686,6 +686,11 @@ a.custom-logo-link {
     display: none;
 }
 
+// hide post author in metadata
+.single .byline {
+    display: none;
+}
+
 @media only screen and (min-width: 1000px) {
     .header-search-box .search-box-wrap {
         position: absolute;
