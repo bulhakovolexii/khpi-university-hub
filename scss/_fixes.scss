@@ -409,11 +409,11 @@ a.custom-logo-link {
 /*--------------------------------------------------------------
 ### Latest News post section style By WEN Themes
 --------------------------------------------------------------*/
-.home-section-latest-news .latest-news-item img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-}
+// .home-section-latest-news .latest-news-item img {
+//     width: 100%;
+//     aspect-ratio: 4 / 3;
+//     object-fit: cover;
+// }
 
 .home-section-latest-news .read-more-button::after {
     background: rgba(160, 0, 27, 1) none repeat scroll 0 0; // Same as $khpi-red-900 but rgba
@@ -476,11 +476,11 @@ a.custom-logo-link {
     content: '';
 }
 
-.home-section-news-and-events .news-post img {
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-}
+// .home-section-news-and-events .news-post img {
+//     width: 100%;
+//     aspect-ratio: 3 / 2;
+//     object-fit: cover;
+// }
 
 .home-section-news-and-events .news-content {
     padding: 7px 0px 14px; // Removes side paddings on home page news

@@ -280,6 +280,7 @@ require_once get_theme_file_path('inc/new-footer.php');
 
 /**
  * Choosing between calendars and thumbnails in News and Events
+ * And another customizer options
  */
 function khpi_university_hub_customize_register($wp_customize)
 {
@@ -291,7 +292,7 @@ function khpi_university_hub_customize_register($wp_customize)
 
     // Adding a control to the section_home_news_and_events section
     $wp_customize->add_control('home_news_display_style', [
-        'label' => __('News Display Style', 'university-hub'),
+        'label' => __('Events Display Style', 'university-hub'),
         'section' => 'section_home_news_and_events', // Specifying an existing section
         'type' => 'radio',
         'choices' => [
@@ -299,5 +300,50 @@ function khpi_university_hub_customize_register($wp_customize)
             'thumbnail' => __('Thumbnail', 'university-hub'),
         ],
     ]);
+    // Setting news_and_events_image_size.
+    $wp_customize->add_setting('theme_options[news_and_events_image_size]', [
+        'default' => 'university-hub-thumb', // Default value
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'university_hub_sanitize_select',
+    ]);
+
+    $wp_customize->add_control('theme_options[news_and_events_image_size]', [
+        'label' => __('News Image Size', 'university-hub'),
+        'section' => 'section_home_news_and_events',
+        'type' => 'select',
+        'priority' => 100,
+        'choices' => university_hub_get_image_sizes_options(false),
+    ]);
 }
 add_action('customize_register', 'khpi_university_hub_customize_register');
+
+/**
+ * Custom thumb sizes
+ */
+add_action(
+    'after_setup_theme',
+    function () {
+        // Change old size
+        remove_image_size('university-hub-thumb');
+        add_image_size('university-hub-thumb', 400, 300, true); // Crop enabled
+
+        // Register new size
+        add_image_size('university-hub-thumb-3-2', 450, 300, true); // 3:2
+        add_image_size('university-hub-thumb-1-1', 400, 400, true); // 1:1
+    },
+    20
+);
+
+add_filter('image_size_names_choose', function ($sizes) {
+    return array_merge($sizes, [
+        'university-hub-thumb-3-2' => __('3:2 Thumbnail', 'university-hub'),
+        'university-hub-thumb-1-1' => __('1:1 Thumbnail', 'university-hub'),
+    ]);
+});
+
+add_filter('university_hub_get_image_sizes_options', function ($sizes) {
+    $sizes['university-hub-thumb-3-2'] = __('3:2 Thumbnail', 'university-hub');
+    $sizes['university-hub-thumb-1-1'] = __('1:1 Thumbnail', 'university-hub');
+
+    return $sizes;
+});
