@@ -691,6 +691,45 @@ a.custom-logo-link {
     display: none;
 }
 
+// style for share btns
+.content-area .university_hub_widget_social {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 4px;
+    padding: 20px 0 20px;
+
+    ul {
+        display: flex;
+        gap: 4px;
+
+        li {
+            margin: 0;
+
+            a {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::before {
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    text-decoration: none;
+
+                    &::before {
+                        transition: all 0.5s ease-out 0s;
+                        color: $khpi-black-900;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 1000px) {
     .header-search-box .search-box-wrap {
         position: absolute;
