@@ -347,3 +347,21 @@ add_filter('university_hub_get_image_sizes_options', function ($sizes) {
 
     return $sizes;
 });
+
+/**
+ * Add clild theme translations
+ */
+function childtheme_load_textdomain() {
+    load_child_theme_textdomain( 'khpi-university-hub', get_stylesheet_directory() . '/languages');
+}
+add_action( 'after_setup_theme', 'childtheme_load_textdomain', 20);
+
+function childtheme_override_translation( $translated_text, $text, $domain ) {
+    if ( $domain === 'university-hub' && $text === 'Top Menu' ) {
+        $translated_text = __( 'Language Menu', 'khpi-university-hub' );
+    }
+
+    return $translated_text;
+}
+add_filter( 'gettext', 'childtheme_override_translation', 10, 3 );
+
