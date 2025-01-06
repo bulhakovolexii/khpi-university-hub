@@ -837,6 +837,12 @@ a.custom-logo-link {
     flex-wrap: wrap;
 }
 
+// site title alignment for 2 lines name
+.site-title:has(br) {
+    text-align: center;
+    line-height: 1.2;
+}
+
 // style changes for light theme
 body {
     &.theme-light,
