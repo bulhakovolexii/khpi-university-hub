@@ -17,9 +17,9 @@ get_header(); ?>
 
 			<?php get_template_part('template-parts/content', 'single'); ?>
             
-            <!-- share btns -->
+            <!-- share btns -->           
             <div class="university_hub_widget_social">
-                <span>Поділитись: </span>
+                <span><?php _e( 'Share to:', 'khpi-university-hub' );?> </span>
                 <ul>
                 <li><a href="https://www.facebook.com/share.php?u=<?php echo urlencode(
                     get_permalink()
