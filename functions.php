@@ -348,8 +348,9 @@ add_filter('university_hub_get_image_sizes_options', function ($sizes) {
     return $sizes;
 });
 
-
-
+/**
+ * Add clild theme translations
+ */
 function childtheme_load_textdomain() {
     load_child_theme_textdomain( 'khpi-university-hub', get_stylesheet_directory() . '/languages');
 }
