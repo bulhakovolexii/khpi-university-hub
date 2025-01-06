@@ -42,7 +42,8 @@ $news_and_events_ecategory = university_hub_get_option(
 
 							<div class="news-post">
 								<?php
-        $image_size = university_hub_get_option('news_and_events_image_size'); // Получаем выбранный размер.
+        $image_size = university_hub_get_option('news_and_events_image_size');
+        // Получаем выбранный размер.
         if (has_post_thumbnail()): ?>
     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail($image_size, [
     'class' => 'aligncenter',
