@@ -18,33 +18,39 @@ get_header(); ?>
 			<?php get_template_part('template-parts/content', 'single'); ?>
             
             <!-- share btns -->
-            <div class="university_hub_widget_social">
-                <span><?php _e('Share to:', 'khpi-university-hub'); ?> </span>
-                <ul>
-                <li><a href="https://www.facebook.com/share.php?u=<?php echo urlencode(
+            <?php
+            $enable_share_buttons = get_theme_mod('enable_share_buttons', '1');
+
+            if ($enable_share_buttons == '1'): ?>
+    <div class="university_hub_widget_social">
+        <span><?php _e('Share to:', 'khpi-university-hub'); ?> </span>
+        <ul>
+            <li><a href="https://www.facebook.com/share.php?u=<?php echo urlencode(
+                get_permalink()
+            ); ?>" target="_blank"></a></li>
+            <li><a href="https://x.com/intent/tweet?<?php echo 'text=' .
+                urlencode(get_the_title()) .
+                '&url=' .
+                urlencode(get_permalink()); ?>" target="_blank"></a></li>
+            <li><a href="https://t.me/share/url?url=<?php echo urlencode(
+                get_permalink()
+            ) .
+                '&text=' .
+                urlencode(get_the_title()); ?>" target="_blank"></a></li>
+            <li><a href="https://www.linkedin.com/shareArticle?title=<?php echo urlencode(
+                get_the_title()
+            ) .
+                '&url=' .
+                urlencode(
                     get_permalink()
-                ); ?>" target="_blank"></a></li>
-                <li><a href="https://x.com/intent/tweet?<?php echo 'text=' .
-                    urlencode(get_the_title()) .
-                    '&url=' .
-                    urlencode(get_permalink()); ?>" target="_blank"></a></li>
-                <li><a href="https://t.me/share/url?url=<?php echo urlencode(
-                    get_permalink()
-                ) .
-                    '&text=' .
-                    urlencode(get_the_title()); ?>" target="_blank"></a></li>
-                <li><a href="https://www.linkedin.com/shareArticle?title=<?php echo urlencode(
-                    get_the_title()
-                ) .
-                    '&url=' .
-                    urlencode(
-                        get_permalink()
-                    ); ?>&mini=true" target="_blank"></a></li>
-                <li><a href="mailto:?subject=<?php echo get_the_title() .
-                    '&body=' .
-                    urlencode(get_permalink()); ?>" target="_blank"></a></li>
-                </ul>
-            </div>
+                ); ?>&mini=true" target="_blank"></a></li>
+            <li><a href="mailto:?subject=<?php echo get_the_title() .
+                '&body=' .
+                urlencode(get_permalink()); ?>" target="_blank"></a></li>
+        </ul>
+    </div>
+<?php endif;
+            ?>
 
 			<?php // Previous/next post navigation.
 

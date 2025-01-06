@@ -292,12 +292,12 @@ function khpi_university_hub_customize_register($wp_customize)
 
     // Adding a control to the section_home_news_and_events section
     $wp_customize->add_control('home_news_display_style', [
-        'label' => __('Events Display Style', 'university-hub'),
+        'label' => __('Стиль мініатюр подій', 'university-hub'),
         'section' => 'section_home_news_and_events', // Specifying an existing section
         'type' => 'radio',
         'choices' => [
-            'calendar' => __('Calendar', 'university-hub'),
-            'thumbnail' => __('Thumbnail', 'university-hub'),
+            'calendar' => __('Дата', 'university-hub'),
+            'thumbnail' => __('Мініатюра', 'university-hub'),
         ],
     ]);
     // Setting news_and_events_image_size.
@@ -308,11 +308,27 @@ function khpi_university_hub_customize_register($wp_customize)
     ]);
 
     $wp_customize->add_control('theme_options[news_and_events_image_size]', [
-        'label' => __('News Image Size', 'university-hub'),
+        'label' => __('Розмір зображення новин', 'university-hub'),
         'section' => 'section_home_news_and_events',
         'type' => 'select',
         'priority' => 100,
         'choices' => university_hub_get_image_sizes_options(false),
+    ]);
+    $wp_customize->add_section('share_buttons_section', [
+        'title' => __('Кнопки "Поділитись"', 'khpi-university-hub'),
+        'priority' => 30,
+    ]);
+
+    $wp_customize->add_setting('enable_share_buttons', [
+        'default' => '1',
+        'transport' => 'refresh',
+    ]);
+
+    $wp_customize->add_control('enable_share_buttons_control', [
+        'label' => __('Увімкнути кнопки "Поділитись"', 'khpi-university-hub'),
+        'section' => 'share_buttons_section',
+        'settings' => 'enable_share_buttons',
+        'type' => 'checkbox',
     ]);
 }
 add_action('customize_register', 'khpi_university_hub_customize_register');
