@@ -695,8 +695,10 @@ a.custom-logo-link {
 }
 
 // hide post author in metadata
-.byline {
-    display: none !important;
+.entry-footer > span {
+    &.byline {
+        display: none;
+    }
 }
 
 // style for share btns
