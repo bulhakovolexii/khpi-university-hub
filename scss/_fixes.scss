@@ -695,7 +695,8 @@ a.custom-logo-link {
 }
 
 // hide post author in metadata
-.single .byline {
+.single .byline,
+.group-blog .byline {
     display: none;
 }
 
