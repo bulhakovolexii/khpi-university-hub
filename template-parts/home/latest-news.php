@@ -10,12 +10,8 @@ $latest_news_layout = university_hub_get_option('latest_news_layout');
 $latest_news_number = university_hub_get_option('latest_news_number');
 $latest_news_column = university_hub_get_option('latest_news_column');
 $latest_news_category = university_hub_get_option('latest_news_category');
-$latest_news_featured_image = university_hub_get_option(
-    'latest_news_featured_image'
-);
-$latest_news_excerpt_length = university_hub_get_option(
-    'latest_news_excerpt_length'
-);
+$latest_news_featured_image = university_hub_get_option('latest_news_featured_image');
+$latest_news_excerpt_length = university_hub_get_option('latest_news_excerpt_length');
 ?>
 
 <div id="latest-news" class="home-section-latest-news">
@@ -38,25 +34,17 @@ $latest_news_excerpt_length = university_hub_get_option(
   ?>
 
 		<?php if ($the_query->have_posts()): ?>
-			<div class="inner-wrapper latest-news-wrapper latest-news-col-<?php echo absint(
-       $latest_news_column
-   ); ?> latest-news-layout-<?php echo absint($latest_news_layout); ?>">
+			<div class="inner-wrapper latest-news-wrapper latest-news-col-<?php echo absint($latest_news_column); ?> latest-news-layout-<?php echo absint($latest_news_layout); ?>">
 				<?php while ($the_query->have_posts()):
         $the_query->the_post(); ?>
 					<div class="latest-news-item">
 						<div class="latest-news-inner-wrapper">
 							<div class="latest-news-thumb">
 								<?php if (has_post_thumbnail()): ?>
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(
-    esc_attr($latest_news_featured_image),
-    ['class' => 'aligncenter']
-); ?></a>
+									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(esc_attr($latest_news_featured_image), ['class' => 'aligncenter']); ?></a>
 								<?php endif; ?>
 								<div class="read-more-button">
-									<a class="more" href="<?php the_permalink(); ?>"><?php esc_html_e(
-    'Learn More',
-    'university-hub'
-); ?></a>
+									<a class="more" href="<?php the_permalink(); ?>"><?php esc_html_e('Learn More', 'university-hub'); ?></a>
 								</div>
 							</div><!-- .latest-news-thumb -->
 							<div class="latest-news-text-wrap">
@@ -64,31 +52,16 @@ $latest_news_excerpt_length = university_hub_get_option(
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</h3><!-- .latest-news-title -->
 								<div class="latest-news-meta">
-									<span class="posted-on"><a href="<?php the_permalink(); ?>"><?php the_time(
-    _x('j M Y', 'date format', 'university-hub')
-); ?></a></span>
-									<?php university_hub_the_term_link_single(
-             'category',
-             '<span class="cat-links">',
-             '</span>'
-         ); ?>
-									<?php if (
-             !post_password_required() &&
-             (comments_open() || get_comments_number())
-         ): ?>
+									<span class="posted-on"><a href="<?php the_permalink(); ?>"><?php the_time(_x('j M Y', 'date format', 'university-hub')); ?></a></span>
+									<?php university_hub_the_term_link_single('category', '<span class="cat-links">', '</span>'); ?>
+									<?php if (!post_password_required() && (comments_open() || get_comments_number())): ?>
 										<span class="comments-link">
-											<?php comments_popup_link(
-               esc_html__('0 comments', 'university-hub'),
-               esc_html__('1 Comment', 'university-hub'),
-               esc_html__('% Comments', 'university-hub')
-           ); ?>
+											<?php comments_popup_link(esc_html__('0 comments', 'university-hub'), esc_html__('1 Comment', 'university-hub'), esc_html__('% Comments', 'university-hub')); ?>
 										</span>
 									<?php endif; ?>
 								</div><!-- .latest-news-meta -->
 								<?php
-        $excerpt = university_hub_the_excerpt(
-            absint($latest_news_excerpt_length)
-        );
+        $excerpt = university_hub_the_excerpt(absint($latest_news_excerpt_length));
         if ($excerpt) {
             echo wp_kses_post(wpautop($excerpt));
         }
@@ -108,13 +81,8 @@ $latest_news_excerpt_length = university_hub_get_option(
     <div class="clear:right;"></div>
     <div>
         <p id="more-news">
-            <a href="<?php echo esc_url(
-                get_category_link($latest_news_category)
-            ); ?>">
-                <?php esc_html_e(
-                    'Latest News',
-                    'university-hub'
-                ); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i>
+            <a href="<?php echo esc_url(get_category_link($latest_news_category)); ?>">
+                <?php esc_html_e('Latest News', 'university-hub'); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i>
             </a>
         </p>
     </div>
