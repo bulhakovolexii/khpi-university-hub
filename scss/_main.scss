@@ -2552,9 +2552,7 @@ a.quick-email,
 }
 
 #main-slider::before {
-    background: rgba(0, 0, 0, 0)
-        linear-gradient(to top, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%)
-        repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to top, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat scroll 0 0;
     position: absolute;
     top: 0;
     width: 100%;
@@ -2565,9 +2563,7 @@ a.quick-email,
 }
 
 #main-slider::after {
-    background: rgba(0, 0, 0, 0)
-        linear-gradient(to top, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0) 100%)
-        repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to top, rgba(0, 0, 0, 0.5) 0px, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0;
     color: $white;
     position: absolute;
     bottom: 0;
@@ -3353,15 +3349,11 @@ div.wpcf7 {
     float: left;
 }
 
-.home-section-latest-news
-    .latest-news-col-3
-    .latest-news-item:nth-child(3n + 1) {
+.home-section-latest-news .latest-news-col-3 .latest-news-item:nth-child(3n + 1) {
     clear: both;
 }
 
-.home-section-latest-news
-    .latest-news-col-4
-    .latest-news-item:nth-child(4n + 1) {
+.home-section-latest-news .latest-news-col-4 .latest-news-item:nth-child(4n + 1) {
     clear: both;
 }
 
@@ -3400,9 +3392,7 @@ div.wpcf7 {
     width: 44%;
 }
 
-.home-section-latest-news
-    .latest-news-wrapper.latest-news-layout-2
-    .latest-news-item {
+.home-section-latest-news .latest-news-wrapper.latest-news-layout-2 .latest-news-item {
     width: 50%;
     clear: inherit;
 }
@@ -3815,9 +3805,7 @@ a.more {
 /*--------------------------------------------------------------
 ### Featured Page Widget style By WEN Themes
 --------------------------------------------------------------*/
-#university-hub-front-page-widgets
-    .university_hub_widget_featured_page
-    .container {
+#university-hub-front-page-widgets .university_hub_widget_featured_page .container {
     width: 1349px;
     padding: 0;
     max-width: 100%;
@@ -4250,18 +4238,12 @@ a.more {
 /*--------------------------------------------------------------
 ### Woocommercce Product Grid widget style By WEN Themes
 --------------------------------------------------------------*/
-.university_hub_widget_products_grid
-    .university-hub-woocommerce-product-grid-4
-    ul.products
-    li.product {
+.university_hub_widget_products_grid .university-hub-woocommerce-product-grid-4 ul.products li.product {
     margin: 0 1.5% 30px;
     width: 22%;
 }
 
-.university_hub_widget_products_grid
-    .university-hub-woocommerce-product-grid-3
-    ul.products
-    li.product {
+.university_hub_widget_products_grid .university-hub-woocommerce-product-grid-3 ul.products li.product {
     width: 30.3%;
     margin: 0 1.5% 30px;
 }
@@ -4396,10 +4378,7 @@ a.more {
     width: 100%;
 }
 
-.university-hub-woocommerce.university-hub-woocommerce-product-grid-3
-    ul.products
-    li.product
-    .button {
+.university-hub-woocommerce.university-hub-woocommerce-product-grid-3 ul.products li.product .button {
     left: 32%;
 }
 
@@ -5156,9 +5135,7 @@ a.more {
         clear: none;
     }
 
-    .home-section-latest-news
-        .latest-news-wrapper.latest-news-layout-2
-        .latest-news-item:nth-child(3n) {
+    .home-section-latest-news .latest-news-wrapper.latest-news-layout-2 .latest-news-item:nth-child(3n) {
         clear: both;
     }
 
@@ -5587,9 +5564,7 @@ a.more {
         max-width: 100%;
     }
 
-    #university-hub-front-page-widgets
-        .university_hub_widget_featured_page
-        .container {
+    #university-hub-front-page-widgets .university_hub_widget_featured_page .container {
         max-width: 97%;
         padding: 0 15px;
     }
@@ -5658,10 +5633,7 @@ a.more {
         font-size: 25px;
     }
 
-    #university-hub-front-page-widgets
-        .university_hub_widget_call_to_action
-        .call-to-action-description
-        p {
+    #university-hub-front-page-widgets .university_hub_widget_call_to_action .call-to-action-description p {
         font-size: 15px;
     }
 
@@ -5698,14 +5670,8 @@ a.more {
         clear: both;
     }
 
-    .university_hub_widget_products_grid
-        .university-hub-woocommerce-product-grid-4
-        ul.products
-        li.product,
-    .university_hub_widget_products_grid
-        .university-hub-woocommerce-product-grid-3
-        ul.products
-        li.product {
+    .university_hub_widget_products_grid .university-hub-woocommerce-product-grid-4 ul.products li.product,
+    .university_hub_widget_products_grid .university-hub-woocommerce-product-grid-3 ul.products li.product {
         margin: 0 1.5% 30px;
         width: 47%;
     }
@@ -6064,9 +6030,7 @@ a.more {
         text-align: center;
     }
 
-    .home-section-latest-news
-        .latest-news-item.news-featured
-        .latest-news-thumb {
+    .home-section-latest-news .latest-news-item.news-featured .latest-news-thumb {
         float: none;
         margin-right: 0;
         width: 100%;
@@ -6308,14 +6272,8 @@ a.more {
         margin-bottom: 15px;
     }
 
-    .university_hub_widget_products_grid
-        .university-hub-woocommerce-product-grid-4
-        ul.products
-        li.product,
-    .university_hub_widget_products_grid
-        .university-hub-woocommerce-product-grid-4
-        ul.products
-        li.product {
+    .university_hub_widget_products_grid .university-hub-woocommerce-product-grid-4 ul.products li.product,
+    .university_hub_widget_products_grid .university-hub-woocommerce-product-grid-4 ul.products li.product {
         width: 94%;
         margin: 0 auto 15px;
         float: none;

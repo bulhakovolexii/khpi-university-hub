@@ -25,28 +25,11 @@ get_header(); ?>
     <div class="university_hub_widget_social">
         <span><?php _e('Share to:', 'khpi-university-hub'); ?> </span>
         <ul>
-            <li><a href="https://www.facebook.com/share.php?u=<?php echo urlencode(
-                get_permalink()
-            ); ?>" target="_blank"></a></li>
-            <li><a href="https://x.com/intent/tweet?<?php echo 'text=' .
-                urlencode(get_the_title()) .
-                '&url=' .
-                urlencode(get_permalink()); ?>" target="_blank"></a></li>
-            <li><a href="https://t.me/share/url?url=<?php echo urlencode(
-                get_permalink()
-            ) .
-                '&text=' .
-                urlencode(get_the_title()); ?>" target="_blank"></a></li>
-            <li><a href="https://www.linkedin.com/shareArticle?title=<?php echo urlencode(
-                get_the_title()
-            ) .
-                '&url=' .
-                urlencode(
-                    get_permalink()
-                ); ?>&mini=true" target="_blank"></a></li>
-            <li><a href="mailto:?subject=<?php echo get_the_title() .
-                '&body=' .
-                urlencode(get_permalink()); ?>" target="_blank"></a></li>
+            <li><a href="https://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank"></a></li>
+            <li><a href="https://x.com/intent/tweet?<?php echo 'text=' . urlencode(get_the_title()) . '&url=' . urlencode(get_permalink()); ?>" target="_blank"></a></li>
+            <li><a href="https://t.me/share/url?url=<?php echo urlencode(get_permalink()) . '&text=' . urlencode(get_the_title()); ?>" target="_blank"></a></li>
+            <li><a href="https://www.linkedin.com/shareArticle?title=<?php echo urlencode(get_the_title()) . '&url=' . urlencode(get_permalink()); ?>&mini=true" target="_blank"></a></li>
+            <li><a href="mailto:?subject=<?php echo get_the_title() . '&body=' . urlencode(get_permalink()); ?>" target="_blank"></a></li>
         </ul>
     </div>
 <?php endif;

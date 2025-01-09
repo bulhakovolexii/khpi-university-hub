@@ -8,14 +8,10 @@
 <?php
 $news_and_events_ntitle = university_hub_get_option('news_and_events_ntitle');
 $news_and_events_nnumber = university_hub_get_option('news_and_events_nnumber');
-$news_and_events_ncategory = university_hub_get_option(
-    'news_and_events_ncategory'
-);
+$news_and_events_ncategory = university_hub_get_option('news_and_events_ncategory');
 $news_and_events_etitle = university_hub_get_option('news_and_events_etitle');
 $news_and_events_enumber = university_hub_get_option('news_and_events_enumber');
-$news_and_events_ecategory = university_hub_get_option(
-    'news_and_events_ecategory'
-);
+$news_and_events_ecategory = university_hub_get_option('news_and_events_ecategory');
 ?>
 <div id="university-hub-news-and-events" class="home-section-news-and-events">
 	<div class="container">
@@ -23,11 +19,7 @@ $news_and_events_ecategory = university_hub_get_option(
 			<div class="recent-news">
 				<h2><?php echo esc_html($news_and_events_ntitle); ?></h2>
 				<?php
-    $qargs = [
-        'posts_per_page' => absint($news_and_events_nnumber),
-        'no_found_rows' => true,
-        'ignore_sticky_posts' => true,
-    ];
+    $qargs = ['posts_per_page' => absint($news_and_events_nnumber), 'no_found_rows' => true, 'ignore_sticky_posts' => true];
     if (absint($news_and_events_ncategory) > 0) {
         $qargs['cat'] = absint($news_and_events_ncategory);
     } // Fetch posts.
@@ -55,19 +47,10 @@ $news_and_events_ecategory = university_hub_get_option(
 								<div class="news-content">
 									<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 									<div class="block-meta">
-										<span class="posted-on"><a href="<?php the_permalink(); ?>"><?php the_time(
-    _x('F d, Y', 'date format', 'university-hub')
-); ?></a></span>
-										<?php if (
-              !post_password_required() &&
-              (comments_open() || get_comments_number())
-          ): ?>
+										<span class="posted-on"><a href="<?php the_permalink(); ?>"><?php the_time(_x('F d, Y', 'date format', 'university-hub')); ?></a></span>
+										<?php if (!post_password_required() && (comments_open() || get_comments_number())): ?>
 											<span class="comments-link">
-												<?php comments_popup_link(
-                esc_html__('0 comments', 'university-hub'),
-                esc_html__('1 Comment', 'university-hub'),
-                esc_html__('% Comments', 'university-hub')
-            ); ?>
+												<?php comments_popup_link(esc_html__('0 comments', 'university-hub'), esc_html__('1 Comment', 'university-hub'), esc_html__('% Comments', 'university-hub')); ?>
 											</span>
 										<?php endif; ?>
 									</div><!-- .block-meta -->
@@ -89,11 +72,7 @@ $news_and_events_ecategory = university_hub_get_option(
 			<div class="recent-events">
 				<h2><?php echo esc_html($news_and_events_etitle); ?></h2>
 				<?php
-    $qargs = [
-        'posts_per_page' => absint($news_and_events_enumber),
-        'no_found_rows' => true,
-        'ignore_sticky_posts' => true,
-    ];
+    $qargs = ['posts_per_page' => absint($news_and_events_enumber), 'no_found_rows' => true, 'ignore_sticky_posts' => true];
     if (absint($news_and_events_ecategory) > 0) {
         $qargs['cat'] = absint($news_and_events_ecategory);
     } // Fetch posts.
@@ -110,17 +89,10 @@ $news_and_events_ecategory = university_hub_get_option(
 									<?php // Getting a setting from the Customizer
 
 
-         $news_display_style = get_theme_mod(
-             'home_news_display_style',
-             'calendar'
-         );
+         $news_display_style = get_theme_mod('home_news_display_style', 'calendar');
          if ($news_display_style === 'calendar'): ?>
-    <span class="entry-month"><?php the_time(
-        _x('M', 'date format', 'university-hub')
-    ); ?></span>
-									<span class="entry-day"><?php the_time(
-             _x('d', 'date format', 'university-hub')
-         ); ?></span>
+    <span class="entry-month"><?php the_time(_x('M', 'date format', 'university-hub')); ?></span>
+									<span class="entry-day"><?php the_time(_x('d', 'date format', 'university-hub')); ?></span>
 <?php else: ?>
     <?php if (has_post_thumbnail()): ?>
         <a href="<?php the_permalink(); ?>">
@@ -148,13 +120,8 @@ $news_and_events_ecategory = university_hub_get_option(
                         <!-- more-events-link -->
 			<?php if (!empty($news_and_events_ecategory)): ?>
     <p id="more-events">
-        <a href="<?php echo esc_url(
-            get_category_link($news_and_events_ecategory)
-        ); ?>">
-            <?php esc_html_e(
-                'Events',
-                'university-hub'
-            ); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i>
+        <a href="<?php echo esc_url(get_category_link($news_and_events_ecategory)); ?>">
+            <?php esc_html_e('Events', 'university-hub'); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i>
         </a>
     </p>
 <?php endif; ?>

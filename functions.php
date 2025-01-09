@@ -11,7 +11,7 @@ add_action(
         remove_theme_support('editor-color-palette');
         remove_theme_support('custom-background');
     },
-    20
+    20,
 );
 
 /**
@@ -25,40 +25,16 @@ function child_theme_dequeue_parent_styles()
     wp_dequeue_style('university-hub-editor-style'); // Editor styles.
 }
 add_action('wp_enqueue_scripts', 'child_theme_dequeue_parent_styles', 20);
-add_action(
-    'enqueue_block_editor_assets',
-    'child_theme_dequeue_parent_styles',
-    20
-);
+add_action('enqueue_block_editor_assets', 'child_theme_dequeue_parent_styles', 20);
 
 /**
  * Connect child theme styles and scripts.
  */
 function child_theme_enqueue_styles()
 {
-    wp_enqueue_style(
-        'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        [],
-        filemtime(get_stylesheet_directory() . '/style.css')
-    );
-
-    wp_enqueue_style(
-        'child-theme-style',
-        get_stylesheet_directory_uri() . '/css/blocks.css',
-        [],
-        '1.0.0'
-    );
-    wp_enqueue_style(
-        'child-theme-google-fonts',
-        'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap'
-    );
-    wp_enqueue_style(
-        'fontawesome',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',
-        [],
-        '6.5.0'
-    );
+    wp_enqueue_style('child-theme-style', get_stylesheet_directory_uri() . '/css/blocks.css', [], '1.0.0');
+    wp_enqueue_style('child-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', [], '6.5.0');
 }
 add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles', 20);
 
@@ -67,12 +43,7 @@ add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles', 20);
  */
 function child_theme_block_editor_styles()
 {
-    wp_enqueue_style(
-        'child-theme-editor-style',
-        get_stylesheet_directory_uri() . '/css/editor-blocks.css',
-        [],
-        '1.0.0'
-    );
+    wp_enqueue_style('child-theme-editor-style', get_stylesheet_directory_uri() . '/css/editor-blocks.css', [], '1.0.0');
 }
 add_action('enqueue_block_editor_assets', 'child_theme_block_editor_styles');
 
@@ -215,38 +186,26 @@ function enqueue_child_theme_scripts()
         get_stylesheet_directory_uri() . '/js/custom.js',
         [], // Dependencies (e.g. jQuery)
         null, // Version (null for automatic)
-        true // Include in footer (true) or head (false)
+        true, // Include in footer (true) or head (false)
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_child_theme_scripts');
 
+/**
+ * Custom content width.
+ */
 if (!function_exists('khpi_university_hub_custom_content_width')):
-    /**
-     * Custom content width.
-     *
-     * @since 1.0.0
-     */
     function khpi_university_hub_custom_content_width()
     {
         global $post, $wp_query, $content_width;
 
         $global_layout = university_hub_get_option('global_layout');
-        $global_layout = apply_filters(
-            'university_hub_filter_theme_global_layout',
-            $global_layout
-        );
+        $global_layout = apply_filters('university_hub_filter_theme_global_layout', $global_layout);
 
         // Check if single.
         if ($post && is_singular()) {
-            $post_options = get_post_meta(
-                $post->ID,
-                'university_hub_theme_settings',
-                true
-            );
-            if (
-                isset($post_options['post_layout']) &&
-                !empty($post_options['post_layout'])
-            ) {
+            $post_options = get_post_meta($post->ID, 'university_hub_theme_settings', true);
+            if (isset($post_options['post_layout']) && !empty($post_options['post_layout'])) {
                 $global_layout = esc_attr($post_options['post_layout']);
             }
         }
@@ -271,11 +230,10 @@ if (!function_exists('khpi_university_hub_custom_content_width')):
 endif;
 
 add_filter('template_redirect', 'khpi_university_hub_custom_content_width', 20);
+
 /**
  * New footer hook
  */
-
-// require_once get_stylesheet_directory_uri() . '/inc/new-footer.php';
 require_once get_theme_file_path('inc/new-footer.php');
 
 /**
@@ -300,6 +258,7 @@ function khpi_university_hub_customize_register($wp_customize)
             'thumbnail' => __('Мініатюра', 'university-hub'),
         ],
     ]);
+
     // Setting news_and_events_image_size.
     $wp_customize->add_setting('theme_options[news_and_events_image_size]', [
         'default' => 'university-hub-thumb', // Default value
@@ -314,6 +273,7 @@ function khpi_university_hub_customize_register($wp_customize)
         'priority' => 100,
         'choices' => university_hub_get_image_sizes_options(false),
     ]);
+
     $wp_customize->add_section('share_buttons_section', [
         'title' => __('Кнопки "Поділитись"', 'khpi-university-hub'),
         'priority' => 30,
@@ -347,7 +307,7 @@ add_action(
         add_image_size('university-hub-thumb-3-2', 450, 300, true); // 3:2
         add_image_size('university-hub-thumb-1-1', 400, 400, true); // 1:1
     },
-    20
+    20,
 );
 
 add_filter('image_size_names_choose', function ($sizes) {
@@ -365,14 +325,11 @@ add_filter('university_hub_get_image_sizes_options', function ($sizes) {
 });
 
 /**
- * Add clild theme translations
+ * Add child theme translations
  */
 function childtheme_load_textdomain()
 {
-    load_child_theme_textdomain(
-        'khpi-university-hub',
-        get_stylesheet_directory() . '/languages'
-    );
+    load_child_theme_textdomain('khpi-university-hub', get_stylesheet_directory() . '/languages');
 }
 add_action('after_setup_theme', 'childtheme_load_textdomain', 20);
 
@@ -398,5 +355,5 @@ add_filter(
         return $output;
     },
     10,
-    2
+    2,
 );
