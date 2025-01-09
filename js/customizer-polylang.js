@@ -35,7 +35,7 @@ var PSPolyLang = (function( api, $ ) {
 			var current_language_name = '';
 
 			var html = '<span style="position:relative;left:38px">Language: </span>';
-			html += '<select id="pll-language-select" style="position:relative; left: 35px; top: 1px; padding: 1px 3px; width: 55px;">';
+			html += '<select id="pll-language-select" style="position:relative; left: 35px; padding: 3px; width: 55px;">';
 			for (var i = 0; i < languages.length; i++) {
 				var language = languages[i];
 				var selected = (language.slug === current_language) ? 'selected=""' : '';
