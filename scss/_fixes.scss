@@ -854,6 +854,11 @@ a.custom-logo-link {
 
 .gsc-control-cse {
     padding: 0 !important;
+    font-family: $main-font !important ;
+
+    .gsc-table-result {
+        font-family: $main-font !important ;
+    }
 }
 
 .gsc-control-wrapper-cse {
@@ -931,9 +936,6 @@ a.custom-logo-link {
 }
 
 .gsc-completion-container {
-    position: absolute !important;
-    top: 20px;
-
     & > tbody > tr:last-child {
         display: none;
     }
