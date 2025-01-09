@@ -365,3 +365,4 @@ function childtheme_override_translation( $translated_text, $text, $domain ) {
 }
 add_filter( 'gettext', 'childtheme_override_translation', 10, 3 );
 
+require_once get_theme_file_path('/customizer-polylang.php');
