@@ -852,6 +852,104 @@ a.custom-logo-link {
     line-height: 1.2;
 }
 
+.gsc-control-cse {
+    padding: 0 !important;
+}
+
+.gsc-control-wrapper-cse {
+    th,
+    td {
+        border: none;
+    }
+}
+
+.gsc-table-result {
+    font-size: 15px !important;
+}
+
+.gs-title,
+.gs-title * {
+    font-size: 25px !important;
+    color: $khpi-red-900 !important;
+    a,
+    a:visited {
+        color: $khpi-red-900 !important;
+    }
+}
+
+.gs-spelling a,
+.gs-spelling a:visited {
+    color: $khpi-red-900 !important;
+}
+
+.gs-promotion .gs-visibleUrl,
+.gs-webResult .gs-visibleUrl {
+    color: $khpi-blue-600 !important;
+}
+
+.gcsc-more-maybe-branding-root {
+    display: none !important;
+}
+
+.gsc-results .gsc-cursor-box {
+    font-size: 15px;
+    .gsc-cursor-current-page {
+        color: $khpi-red-900 !important;
+    }
+}
+
+.gsc-search-button-v2 {
+    height: 41px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: $khpi-red-900 !important;
+
+    &:hover,
+    &:focus {
+        svg {
+            fill: $khpi-black-900;
+        }
+        background-color: $khpi-yellow-500 !important;
+    }
+}
+
+.gsc-input {
+    min-height: 30px !important;
+    background: none !important;
+}
+
+.gsc-above-wrapper-area {
+    display: none;
+}
+
+.gsst_a .gscb_a {
+    color: $khpi-red-200 !important;
+
+    &:hover {
+        color: $khpi-red-900 !important;
+    }
+}
+
+.gsc-completion-container {
+    position: absolute !important;
+    top: 20px;
+
+    & > tbody > tr:last-child {
+        display: none;
+    }
+}
+
+.gsc-input-box {
+    table {
+        margin: 0 !important;
+    }
+}
+
+.gs-web-image-box,
+.gs-promotion-image-box {
+    padding: 2px 5em 2px 0 !important;
+}
+
 // style changes for light theme
 body {
     &.theme-light,

@@ -290,6 +290,22 @@ function khpi_university_hub_customize_register($wp_customize)
         'settings' => 'enable_share_buttons',
         'type' => 'checkbox',
     ]);
+
+    $wp_customize->add_section('custom_search_settings', [
+        'title' => __('Налаштування пошуку', 'university-hub'),
+        'priority' => 30,
+    ]);
+
+    $wp_customize->add_setting('google_cse_id', [
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+
+    $wp_customize->add_control('google_cse_id', [
+        'label' => __('Google CSE ID', 'university-hub'),
+        'section' => 'custom_search_settings',
+        'type' => 'text',
+    ]);
 }
 add_action('customize_register', 'khpi_university_hub_customize_register');
 
