@@ -17,7 +17,7 @@ get_header(); ?>
   if (!empty($google_cse_id)): ?>
 
 			<script async src="https://cse.google.com/cse.js?cx=<?php echo $google_cse_id; ?>"></script>
-			<div class="gcse-search" data-queryParameterName="s"></div>
+			<div class="gcse-search" data-queryParameterName="s" data-mobileLayout="disabled"></div>
 
         <?php else: ?>
 
