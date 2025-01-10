@@ -868,6 +868,12 @@ a.custom-logo-link {
     td {
         border: none;
     }
+
+    .gsc-search-box td,
+    .gsc-search-box th {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
 }
 
 .gsc-table-result {
@@ -925,8 +931,9 @@ a.custom-logo-link {
 }
 
 .gsc-input {
-    min-height: 30px !important;
+    min-height: 40px !important;
     background: none !important;
+    padding-left: 0 !important;
 }
 
 .gsc-above-wrapper-area {
