@@ -373,3 +373,16 @@ add_filter(
     10,
     2,
 );
+
+/**
+ * Enable polylang settings in customizer
+ */
+add_action('after_setup_theme', function () {
+    if (!function_exists('is_plugin_active')) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+
+    if (!is_plugin_active('add-polylang-support-for-customizer/apsfc.php')) {
+        require_once get_theme_file_path('/customizer-polylang.php');
+    }
+});
