@@ -855,6 +855,8 @@ a.custom-logo-link {
 .gsc-control-cse {
     padding: 0 !important;
     font-family: $main-font !important ;
+    background-color: transparent !important;
+    border: none !important;
 
     .gsc-table-result {
         font-family: $main-font !important ;
@@ -870,6 +872,10 @@ a.custom-logo-link {
 
 .gsc-table-result {
     font-size: 15px !important;
+}
+
+.gsc-webResult.gsc-result {
+    border: none !important;
 }
 
 .gs-title,
