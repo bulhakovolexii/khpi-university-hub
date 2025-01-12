@@ -11,43 +11,59 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<?php
-  $google_cse_id = get_theme_mod('google_cse_id', '');
 
-  if (!empty($google_cse_id)): ?>
-
+		<?php // google search conditional insert
+  		$google_cse_id = get_theme_mod('google_cse_id', '');
+  		if (!empty($google_cse_id)): ?>
 			<script async src="https://cse.google.com/cse.js?cx=<?php echo $google_cse_id; ?>"></script>
 			<div class="gcse-search" data-queryParameterName="s" data-mobileLayout="disabled"></div>
-
         <?php else: ?>
 
-		<?php if (have_posts()): ?>
+		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf(esc_html__('Search Results for: %s', 'university-hub'), '<span>' . get_search_query() . '</span>'); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'university-hub' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
-			<?php while (have_posts()):
-       the_post(); ?>
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part('template-parts/content', 'search'); ?>
+				<?php
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', 'search' );
+				?>
+
+			<?php endwhile; ?>
 
 			<?php
-   endwhile; ?>
+			/**
+			 * Hook - university_hub_action_posts_navigation.
+			 *
+			 * @hooked: university_hub_custom_posts_navigation - 10
+			 */
+			do_action( 'university_hub_action_posts_navigation' ); ?>
 
-			<?php do_action('university_hub_action_posts_navigation'); ?>
+		<?php else : ?>
 
-		<?php else: ?>
-
-			<?php get_template_part('template-parts/content', 'none'); ?>
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
 		
-		<?php endif;
-  ?>
+		<?php endif; ?><!-- google search conditional insert -->
 
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php do_action('university_hub_action_sidebar'); ?>
+<?php
+	/**
+	 * Hook - university_hub_action_sidebar.
+	 *
+	 * @hooked: university_hub_add_sidebar - 10
+	 */
+	do_action( 'university_hub_action_sidebar' );
+?>
 <?php get_footer(); ?>

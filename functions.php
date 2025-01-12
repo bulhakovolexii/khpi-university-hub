@@ -1,116 +1,302 @@
 <?php
 /**
- * Functions and definitions for the child theme.
+ * Theme functions and definitions.
+ *
+ * @link https://codex.wordpress.org/Functions_File_Explained
+ *
+ * @package University_Hub
  */
-add_action(
-    'after_setup_theme',
-    function () {
-        // Remove support for block styles, editor and custom background.
-        remove_theme_support('wp-block-styles');
-        remove_theme_support('editor-styles');
-        remove_theme_support('editor-color-palette');
-        remove_theme_support('custom-background');
-    },
-    20,
-);
+
+if ( ! function_exists( 'university_hub_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
+	function university_hub_setup() {
+		/*
+		 * Make theme available for translation.
+		 */
+		load_theme_textdomain( 'university-hub', get_template_directory() . '/languages' );
+
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
+
+		// Let WordPress manage the document title.
+		add_theme_support( 'title-tag' );
+
+		// Enable support for Post Thumbnails on posts and pages.
+		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'university-hub-thumb', 400, 300 );
+
+		// Register nav menu locations.
+		register_nav_menus( array(
+			'primary'  => esc_html__( 'Primary Menu', 'university-hub' ),
+			'top'      => esc_html__( 'Top Menu', 'university-hub' ),
+			'footer'   => esc_html__( 'Footer Menu', 'university-hub' ),
+			'social'   => esc_html__( 'Social Menu', 'university-hub' ),
+			'notfound' => esc_html__( '404 Menu', 'university-hub' ),
+		) );
+
+		/*
+		 * Switch default core markup to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
+
+		// Set up the WordPress core custom background feature. // ! disabled
+		// add_theme_support( 'custom-background', apply_filters( 'university_hub_custom_background_args', array(
+		// 	'default-color' => 'f7fcfe',
+		// ) ) );
+
+		// Enable support for selective refresh of widgets in Customizer.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Enable support for custom logo.
+		add_theme_support( 'custom-logo' );
+
+		// Load default block styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Enable support for footer widgets.
+		add_theme_support( 'footer-widgets', 4 );
+
+		// Load Supports.
+		require_once get_template_directory() . '/inc/support.php';
+
+		// Add custom editor font sizes.
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name'      => __( 'Small', 'university-hub' ),
+					'shortName' => __( 'S', 'university-hub' ),
+					'size'      => 13,
+					'slug'      => 'small',
+				),
+				array(
+					'name'      => __( 'Normal', 'university-hub' ),
+					'shortName' => __( 'M', 'university-hub' ),
+					'size'      => 14,
+					'slug'      => 'normal',
+				),
+				array(
+					'name'      => __( 'Large', 'university-hub' ),
+					'shortName' => __( 'L', 'university-hub' ),
+					'size'      => 30,
+					'slug'      => 'large',
+				),
+				array(
+					'name'      => __( 'Huge', 'university-hub' ),
+					'shortName' => __( 'XL', 'university-hub' ),
+					'size'      => 36,
+					'slug'      => 'huge',
+				),
+			)
+		);
+
+		// Editor color palette.
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name' => __('Red', 'university-hub'),
+            		'slug' => 'red',
+            		'color' => '#a0001b', // #e4572e => #a0001b
+				),
+				array(
+					'name' => __('Yellow', 'university-hub'),
+					'slug' => 'yellow',
+					'color' => '#fbb800', // #f4a024 => #fbb800
+				),
+				array(
+					'name' => __('Black', 'university-hub'),
+					'slug' => 'black',
+					'color' => '#2a2a2a', // #000 => #2a2a2a
+				),
+				array(
+					'name' => __('White', 'university-hub'),
+					'slug' => 'white',
+					'color' => '#fcfcfc', // #ffffff =>  #fcfcfc
+				),
+				array(
+					'name' => __('Gray', 'university-hub'),
+					'slug' => 'gray',
+					'color' => '#6c6c6c', // #727272 => #6c6c6c
+				),
+				array(
+					'name' => __('Blue', 'university-hub'),
+					'slug' => 'blue',
+					'color' => '#3eb1c8', // #179bd7 => #3eb1c8
+				),
+				array(
+					'name' => __('Navy Blue', 'university-hub'),
+					'slug' => 'navy-blue',
+					'color' => '#328895', // #253b80 => #328895
+				),
+				array(
+					'name' => __('Light Blue', 'university-hub'),
+					'slug' => 'light-blue',
+					'color' => '#e2f8fc', // #f7fcfe => #e2f8fc
+				),
+				array(
+					'name' => __('Orange', 'university-hub'),
+					'slug' => 'orange',
+					'color' => '#f96605', // #ff6000 => #f96605
+				),
+				array(
+					'name' => __('Green', 'university-hub'),
+					'slug' => 'green',
+					'color' => '#00a085', // #77a464 => #00a085
+				),
+			)
+		);
+	}
+endif;
+
+add_action( 'after_setup_theme', 'university_hub_setup' );
 
 /**
- * Disable parent theme styles.
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
  */
-function child_theme_dequeue_parent_styles()
-{
-    wp_dequeue_style('university-hub-google-fonts'); // Parent theme font.
-    wp_dequeue_style('university-hub-font-awesome'); // Parent theme icon font.
-    wp_dequeue_style('university-hub-block-style'); // Block styles.
-    wp_dequeue_style('university-hub-editor-style'); // Editor styles.
+function university_hub_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'university_hub_content_width', 771 );
 }
-add_action('wp_enqueue_scripts', 'child_theme_dequeue_parent_styles', 20);
-add_action('enqueue_block_editor_assets', 'child_theme_dequeue_parent_styles', 20);
+add_action( 'after_setup_theme', 'university_hub_content_width', 0 );
 
 /**
- * Connect child theme styles and scripts.
+ * Register widget area.
  */
-function child_theme_enqueue_styles()
-{
-    wp_enqueue_style('child-theme-style', get_stylesheet_directory_uri() . '/css/blocks.css', [], '1.0.0');
-    wp_enqueue_style('child-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
-    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', [], '6.5.0');
+function university_hub_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Primary Sidebar', 'university-hub' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here to appear in your Primary Sidebar.', 'university-hub' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Secondary Sidebar', 'university-hub' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here to appear in your Secondary Sidebar.', 'university-hub' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
-add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles', 20);
+add_action( 'widgets_init', 'university_hub_widgets_init' );
 
 /**
- * Adding child theme block editor settings.
+ * Enqueue scripts and styles.
  */
-function child_theme_block_editor_styles()
-{
-    wp_enqueue_style('child-theme-editor-style', get_stylesheet_directory_uri() . '/css/editor-blocks.css', [], '1.0.0');
+function university_hub_scripts() {
+
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+	// updated Font Awesome
+	// wp_enqueue_style( 'university-hub-font-awesome', get_template_directory_uri() . '/third-party/font-awesome/css/font-awesome' . $min . '.css', '', '4.7.0' );
+	wp_enqueue_style( 'university-hub-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', [], '6.5.0' );
+
+	$fonts_url = university_hub_fonts_url();
+	if ( ! empty( $fonts_url ) ) {
+		wp_enqueue_style( 'university-hub-google-fonts', $fonts_url, array(), null );
+	}
+
+	// Theme stylesheet.
+	wp_enqueue_style( 'university-hub-style', get_stylesheet_uri(), null, date( 'Ymd-Gis', filemtime( get_template_directory() . '/style.css' ) ) );
+
+	// Theme block stylesheet.
+	wp_enqueue_style( 'university-hub-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'university-hub-style' ), '20211006' );
+
+	wp_enqueue_script( 'university-hub-navigation', get_template_directory_uri() . '/js/navigation' . $min . '.js', array( 'jquery' ), '20200713', true );
+
+	wp_localize_script( 'university-hub-navigation', 'universityHubOptions', array(
+		'screenReaderText' => array(
+			'expand'   => esc_html__( 'expand child menu', 'university-hub' ),
+			'collapse' => esc_html__( 'collapse child menu', 'university-hub' ),
+		),
+	) );
+
+	wp_enqueue_script( 'university-hub-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
+
+	wp_enqueue_script( 'jquery-cycle2', get_template_directory_uri() . '/third-party/cycle2/js/jquery.cycle2' . $min . '.js', array( 'jquery' ), '2.1.6', true );
+
+	wp_enqueue_script( 'jquery-easy-ticker', get_template_directory_uri() . '/third-party/ticker/jquery.easy-ticker' . $min . '.js', array( 'jquery' ), '2.0', true );
+
+	wp_enqueue_script( 'university-hub-custom', get_template_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.0.2', true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_action('enqueue_block_editor_assets', 'child_theme_block_editor_styles');
+add_action( 'wp_enqueue_scripts', 'university_hub_scripts' );
 
 /**
- * Override color palette and font sizes in the editor.
+ * Enqueue styles for the block-based editor.
+ *
+ * @since University Hub
  */
-function child_theme_setup_editor_features()
-{
-    add_theme_support('editor-color-palette', [
-        [
-            'name' => __('Red', 'university-hub'),
-            'slug' => 'red',
-            'color' => '#a0001b', // #e4572e => #a0001b
-        ],
-        [
-            'name' => __('Yellow', 'university-hub'),
-            'slug' => 'yellow',
-            'color' => '#fbb800', // #f4a024 => #fbb800
-        ],
-        [
-            'name' => __('Black', 'university-hub'),
-            'slug' => 'black',
-            'color' => '#2a2a2a', // #000 => #2a2a2a
-        ],
-        [
-            'name' => __('White', 'university-hub'),
-            'slug' => 'white',
-            'color' => '#fcfcfc', // #ffffff =>  #fcfcfc
-        ],
-        [
-            'name' => __('Gray', 'university-hub'),
-            'slug' => 'gray',
-            'color' => '#6c6c6c', // #727272 => #6c6c6c
-        ],
-        [
-            'name' => __('Blue', 'university-hub'),
-            'slug' => 'blue',
-            'color' => '#3eb1c8', // #179bd7 => #3eb1c8
-        ],
-        [
-            'name' => __('Navy Blue', 'university-hub'),
-            'slug' => 'navy-blue',
-            'color' => '#328895', // #253b80 => #328895
-        ],
-        [
-            'name' => __('Light Blue', 'university-hub'),
-            'slug' => 'light-blue',
-            'color' => '#e2f8fc', // #f7fcfe => #e2f8fc
-        ],
-        [
-            'name' => __('Orange', 'university-hub'),
-            'slug' => 'orange',
-            'color' => '#f96605', // #ff6000 => #f96605
-        ],
-        [
-            'name' => __('Green', 'university-hub'),
-            'slug' => 'green',
-            'color' => '#00a085', // #77a464 => #00a085
-        ],
-    ]);
+function university_hub_block_editor_styles() {
+	// Theme block stylesheet.
+	wp_enqueue_style( 'university-hub-editor-style', get_template_directory_uri() . '/css/editor-blocks.css', array(), '20101208' );
+
+	$fonts_url = university_hub_fonts_url();
+	if ( ! empty( $fonts_url ) ) {
+		wp_enqueue_style( 'university-hub-google-fonts', $fonts_url, array(), null );
+	}
 }
-add_action('after_setup_theme', 'child_theme_setup_editor_features', 20);
+add_action( 'enqueue_block_editor_assets', 'university_hub_block_editor_styles' );
 
 /**
+ * Enqueue admin scripts and styles.
+ */
+function university_hub_admin_scripts( $hook ) {
+
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+	if ( in_array( $hook, array( 'post.php', 'post-new.php' ) ) ) {
+		wp_enqueue_style( 'university-hub-metabox', get_template_directory_uri() . '/css/metabox' . $min . '.css', '', '1.0.1' );
+		wp_enqueue_script( 'university-hub-metabox', get_template_directory_uri() . '/js/metabox' . $min . '.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs' ), '1.0.1', true );
+	}
+
+	if ( 'widgets.php' === $hook ) {
+		wp_enqueue_style( 'wp-color-picker' );
+	    wp_enqueue_script( 'wp-color-picker' );
+	    wp_enqueue_media();
+		wp_enqueue_style( 'university-hub-widgets', get_template_directory_uri() . '/css/widgets' . $min . '.css', array(), '1.0.0' );
+		wp_enqueue_script( 'university-hub-widgets', get_template_directory_uri() . '/js/widgets' . $min . '.js', array( 'jquery' ), '1.0.1', true );
+	}
+
+}
+add_action( 'admin_enqueue_scripts', 'university_hub_admin_scripts' );
+
+/**
+ * Load init.
+ */
+require_once get_template_directory() . '/inc/init.php';
+
+/**
+ * NEW FUNCTIONS
  * Adding a color palette switcher
  */
-function register_theme_customizer($wp_customize)
+// add customizer options
+function university_hub_palette_switcher($wp_customize)
 {
     $wp_customize->add_setting('theme_palette', [
         'default' => 'Dark',
@@ -134,9 +320,10 @@ function register_theme_customizer($wp_customize)
         ],
     ]);
 }
-add_action('customize_register', 'register_theme_customizer');
+add_action('customize_register', 'university_hub_palette_switcher');
 
-function add_theme_body_class($classes)
+// add class to body tag
+function university_hub_palette_class($classes)
 {
     $theme_palette = get_theme_mod('theme_palette', 'default');
 
@@ -146,99 +333,40 @@ function add_theme_body_class($classes)
 
     return $classes;
 }
-add_filter('body_class', 'add_theme_body_class');
+add_filter('body_class', 'university_hub_palette_class');
 
 /**
  * Enables theme color inheritance for qubely
  */
-function active_theme_preset()
+function university_hub_qubely_hook()
 {
     do_action('qubely_active_theme_preset');
 }
-add_action('after_switch_theme', 'active_theme_preset');
+add_action('after_switch_theme', 'university_hub_qubely_hook');
 
 /**
  * Change http links to https when inserting files
  */
-add_filter('media_send_to_editor', 'force_protocol_relative');
-function force_protocol_relative($content)
+function university_hub_force_protocol_relative($content)
 {
-    $content = str_replace('http://', 'https://', $content);
+	$content = str_replace('http://', 'https://', $content);
     return $content;
 }
+add_filter('media_send_to_editor', 'university_hub_force_protocol_relative');
 
 /**
- * Dashicons connections
+ * Dashicons connection
  */
-function load_dashicons()
+function university_hub_load_dashicons()
 {
     wp_enqueue_style('dashicons');
 }
-add_action('wp_enqueue_scripts', 'load_dashicons');
-
-/**
- * Custom js connections
- */
-function enqueue_child_theme_scripts()
-{
-    wp_enqueue_script(
-        'custom-script',
-        get_stylesheet_directory_uri() . '/js/custom.js',
-        [], // Dependencies (e.g. jQuery)
-        null, // Version (null for automatic)
-        true, // Include in footer (true) or head (false)
-    );
-}
-add_action('wp_enqueue_scripts', 'enqueue_child_theme_scripts');
-
-/**
- * Custom content width.
- */
-if (!function_exists('khpi_university_hub_custom_content_width')):
-    function khpi_university_hub_custom_content_width()
-    {
-        global $post, $wp_query, $content_width;
-
-        $global_layout = university_hub_get_option('global_layout');
-        $global_layout = apply_filters('university_hub_filter_theme_global_layout', $global_layout);
-
-        // Check if single.
-        if ($post && is_singular()) {
-            $post_options = get_post_meta($post->ID, 'university_hub_theme_settings', true);
-            if (isset($post_options['post_layout']) && !empty($post_options['post_layout'])) {
-                $global_layout = esc_attr($post_options['post_layout']);
-            }
-        }
-        switch ($global_layout) {
-            case 'no-sidebar':
-                $content_width = 1200;
-                break;
-
-            case 'three-columns':
-                $content_width = 585;
-                break;
-
-            case 'left-sidebar':
-            case 'right-sidebar':
-                $content_width = 831;
-                break;
-
-            default:
-                break;
-        }
-    }
-endif;
-
-add_filter('template_redirect', 'khpi_university_hub_custom_content_width', 20);
-
-/**
- * New footer hook
- */
-require_once get_theme_file_path('inc/new-footer.php');
+add_action('wp_enqueue_scripts', 'university_hub_load_dashicons');
 
 /**
  * Choosing between calendars and thumbnails in News and Events
  * And another customizer options
+ * TODO reafactor to separated functions
  */
 function khpi_university_hub_customize_register($wp_customize)
 {
@@ -308,6 +436,8 @@ function khpi_university_hub_customize_register($wp_customize)
     ]);
 }
 add_action('customize_register', 'khpi_university_hub_customize_register');
+
+// TODO It is necessary to implement functions in the regular places of the theme
 
 /**
  * Custom thumb sizes

@@ -3,17 +3,18 @@
     "scripts": {
         "sass-dev": "sass --watch --no-source-map scss:.",
         "sass-prod": "sass --no-source-map scss:.",
+        "minify": "terser js/custom.js -o js/custom.min.js",
         "format": "prettier --write .",
         "check-format": "prettier --check functions.php",
-        "build": "npm run sass-prod && npm run format && node build.js"
+        "build": "npm run sass-prod && npm run format && npm run minify && node build.js"
     },
     "author": "Olexii Bulhakov",
     "license": "GPL-2.0",
     "devDependencies": {
-        "@prettier/plugin-php": "^0.22.2",
         "archiver": "^7.0.1",
         "fs-extra": "^11.2.0",
         "prettier": "^3.3.3",
-        "sass": "^1.80.7"
+        "sass": "^1.80.7",
+        "terser": "^5.37.0"
     }
 }
