@@ -17,7 +17,7 @@ const distDir = path.join(__dirname, 'dist')
 fs.ensureDirSync(distDir)
 
 // Excluded files and folders
-const exclusions = ['node_modules', 'build.js', 'dist', 'package.json', 'package-lock.json', 'scss', '.git', '.gitignore', '.env', 'megamenu-themes', themeName]
+const exclusions = ['node_modules', 'build.js', 'dist', 'package.json', 'package-lock.json', 'scss', '.git', '.gitignore', '.env', 'megamenu-themes', 'cse-guide', themeName]
 
 // Cleaning the build folder
 fs.removeSync(outputDir)
