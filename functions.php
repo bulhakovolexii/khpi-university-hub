@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Functions and definitions for the child theme.
  */
@@ -294,6 +295,10 @@ function khpi_university_hub_customize_register($wp_customize)
     $wp_customize->add_section('custom_search_settings', [
         'title' => __('Налаштування пошуку', 'university-hub'),
         'priority' => 30,
+        'description' => __(
+            'Google CSE ID, замінює стандартний пошук wordpress на пошуковий рушій Google. Інструкція з його налаштування доступна за <a href="#">посиланням</a>.  Для використання стандартного пошукового рушія, залиште це поле пустим.',
+            'university-hub'
+        ),
     ]);
 
     $wp_customize->add_setting('google_cse_id', [
