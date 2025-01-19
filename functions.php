@@ -36,6 +36,7 @@ function child_theme_enqueue_styles()
     wp_enqueue_style('child-theme-style', get_stylesheet_directory_uri() . '/css/blocks.css', [], '1.0.0');
     wp_enqueue_style('child-theme-google-fonts', 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
     wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', [], '6.5.0');
+    wp_enqueue_style('academicons', 'https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css', [], '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles', 20);
 
@@ -297,7 +298,7 @@ function khpi_university_hub_customize_register($wp_customize)
         'priority' => 30,
         'description' => __(
             'Google CSE ID замінює стандартний пошук WordPress на пошуковий рушій Google. Інструкція з його налаштування доступна за <a href="https://github.com/bulhakovolexii/khpi-university-hub/blob/main/cse-guide/README.md" target="_blank">посиланням</a>. Для використання стандартного пошукового рушія залиште це поле порожнім.',
-            'university-hub'
+            'university-hub',
         ),
     ]);
 
@@ -433,4 +434,37 @@ add_action('init', function () {
     if (is_admin_bar_showing()) {
         remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
     }
+});
+
+// Limit Uploaded Image Size
+add_filter('wp_handle_upload', function ($file) {
+    $max_width = 1920;
+    $max_height = 1920;
+
+    // Check if the file is an image.
+    $mime_type = mime_content_type($file['file']);
+    if (strpos($mime_type, 'image') === false) {
+        return $file;
+    }
+
+    // Get the image size.
+    $image_size = getimagesize($file['file']);
+    if (!$image_size) {
+        return $file;
+    }
+
+    // Check if the image is smaller than 1920px width or height.
+    if ($image_size[0] <= $max_width && $image_size[1] <= $max_height) {
+        return $file;
+    }
+
+    // Resize the image.
+    $image_editor = wp_get_image_editor($file['file']);
+    if (is_wp_error($image_editor)) {
+        return $file;
+    }
+    $image_editor->resize($max_width, $max_height);
+    $image_editor->save($file['file']);
+
+    return $file;
 });
