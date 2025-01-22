@@ -20,28 +20,28 @@ $news_and_events_ecategory = university_hub_get_option('news_and_events_ecategor
 				<h2><?php echo esc_html($news_and_events_ntitle); ?></h2>
 				<?php
     $qargs = ['posts_per_page' => absint($news_and_events_nnumber), 'no_found_rows' => true, 'ignore_sticky_posts' => true];
-    if (absint($news_and_events_ncategory) > 0) {
-        $qargs['cat'] = absint($news_and_events_ncategory);
-    } // Fetch posts.
-    $the_query = new WP_Query($qargs);
-    ?>
+if (absint($news_and_events_ncategory) > 0) {
+    $qargs['cat'] = absint($news_and_events_ncategory);
+} // Fetch posts.
+$the_query = new WP_Query($qargs);
+?>
 
 				<?php if ($the_query->have_posts()): ?>
 					<div class="inner-wrapper">
 
 						<?php while ($the_query->have_posts()):
-          $the_query->the_post(); ?>
+						    $the_query->the_post(); ?>
 
 							<div class="news-post">
 								<?php
         $image_size = university_hub_get_option('news_and_events_image_size');
-        // Получаем выбранный размер.
-        if (has_post_thumbnail()): ?>
+						    // Получаем выбранный размер.
+						    if (has_post_thumbnail()): ?>
     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail($image_size, [
     'class' => 'aligncenter',
 ]); ?></a>
 <?php endif;
-        ?>
+						    ?>
 
 
 								<div class="news-content">
@@ -55,14 +55,14 @@ $news_and_events_ecategory = university_hub_get_option('news_and_events_ecategor
 										<?php endif; ?>
 									</div><!-- .block-meta -->
 									<?php
-         $excerpt = university_hub_the_excerpt(20);
-         echo wp_kses_post(wpautop($excerpt));
-         ?>
+						     $excerpt = university_hub_the_excerpt(20);
+						    echo wp_kses_post(wpautop($excerpt));
+						    ?>
 								</div><!-- .news-content -->
 
 							</div><!-- .news-post -->
 						<?php
-      endwhile; ?>
+						endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 
 					</div><!-- .inner-wrapper -->
@@ -73,16 +73,16 @@ $news_and_events_ecategory = university_hub_get_option('news_and_events_ecategor
 				<h2><?php echo esc_html($news_and_events_etitle); ?></h2>
 				<?php
     $qargs = ['posts_per_page' => absint($news_and_events_enumber), 'no_found_rows' => true, 'ignore_sticky_posts' => true];
-    if (absint($news_and_events_ecategory) > 0) {
-        $qargs['cat'] = absint($news_and_events_ecategory);
-    } // Fetch posts.
-    $the_query = new WP_Query($qargs);
-    ?>
+if (absint($news_and_events_ecategory) > 0) {
+    $qargs['cat'] = absint($news_and_events_ecategory);
+} // Fetch posts.
+$the_query = new WP_Query($qargs);
+?>
 
 				<?php if ($the_query->have_posts()): ?>
 
 						<?php while ($the_query->have_posts()):
-          $the_query->the_post(); ?>
+						    $the_query->the_post(); ?>
 
 							<div class="event-post">
 								<div class="custom-entry-date">
@@ -90,7 +90,7 @@ $news_and_events_ecategory = university_hub_get_option('news_and_events_ecategor
 
 
          $news_display_style = get_theme_mod('home_news_display_style', 'calendar');
-         if ($news_display_style === 'calendar'): ?>
+						    if ($news_display_style === 'calendar'): ?>
     <span class="entry-month"><?php the_time(_x('M', 'date format', 'university-hub')); ?></span>
 									<span class="entry-day"><?php the_time(_x('d', 'date format', 'university-hub')); ?></span>
 <?php else: ?>
@@ -100,31 +100,40 @@ $news_and_events_ecategory = university_hub_get_option('news_and_events_ecategor
         </a>
     <?php endif; ?>
 <?php endif;
-         ?>
+						    ?>
 
 								</div>
 								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<?php
         $excerpt = university_hub_the_excerpt(10);
-        echo wp_kses_post(wpautop($excerpt));
-        ?>
+						    echo wp_kses_post(wpautop($excerpt));
+						    ?>
 							</div> <!-- .event-post -->
 
 						<?php
-      endwhile; ?>
+						endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 
 
 				<?php endif; ?>
 
-                        <!-- more-events-link -->
-			<?php if (!empty($news_and_events_ecategory)): ?>
-    <p id="more-events">
-        <a href="<?php echo esc_url(get_category_link($news_and_events_ecategory)); ?>">
-            <?php esc_html_e('Events', 'university-hub'); ?> &nbsp;<i class="fa-solid fa-arrow-right"></i>
-        </a>
-    </p>
-<?php endif; ?>
+                <!-- more-events-link -->
+				<?php
+$blog_page_url = esc_url(get_permalink(get_option('page_for_posts')));
+$events_link = !empty($news_and_events_ecategory)
+    ? esc_url(get_category_link($news_and_events_ecategory))
+    : $blog_page_url;
+$events_title = !empty($news_and_events_ntitle)
+    ? esc_html($news_and_events_ntitle)
+    : esc_html_e('Events', 'university-hub');
+?>
+
+<p id="more-events">
+    <a href="<?php echo $events_link; ?>">
+        <?php echo $events_title; ?> &nbsp;<i class="fa-solid fa-arrow-right"></i>
+    </a>
+</p>
+
 
 			</div><!-- .recent-news -->
 
