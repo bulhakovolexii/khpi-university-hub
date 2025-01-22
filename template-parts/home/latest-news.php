@@ -83,7 +83,7 @@ $the_query = new WP_Query($qargs);
 		        ? esc_url(get_category_link($latest_news_category))
 		        : $blog_page_url;
 		    $news_title = !empty($latest_news_title)
-		        ? esc_html__("All", "khpi-university-hub") . ' ' . esc_html(strtolower($latest_news_title))
+		        ? esc_html__("All", "khpi-university-hub") . ' ' . esc_html(mb_strtolower($latest_news_title))
 		        : esc_html_e('Latest News', 'university-hub');
 		    ?>
 

@@ -124,7 +124,7 @@ $events_link = !empty($news_and_events_ecategory)
     ? esc_url(get_category_link($news_and_events_ecategory))
     : $blog_page_url;
 $events_title = !empty($news_and_events_etitle)
-    ? esc_html__("All", "khpi-university-hub") . ' ' . esc_html(strtolower($news_and_events_etitle))
+    ? esc_html__("All", "khpi-university-hub") . ' ' . esc_html(mb_strtolower($news_and_events_etitle))
     : esc_html_e('Events', 'university-hub');
 ?>
 
