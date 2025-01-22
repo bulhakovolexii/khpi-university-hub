@@ -14,3 +14,7 @@ msgstr "Поділитись:"
 #: override top menu name
 msgid "Language Menu"
 msgstr "Лінки і мови"
+
+#: All
+msgid "All"
+msgstr "Всі"
