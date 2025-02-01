@@ -965,6 +965,38 @@ a.custom-logo-link {
     padding: 2px 5em 2px 0 !important;
 }
 
+// accordion expand btn
+.su-expand-container {
+    display: flex;
+    justify-content: end;
+}
+
+.su-expand-btn {
+    background: none;
+    color: $khpi-red-900;
+    margin-bottom: 0.5em;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+        background: none;
+        color: $khpi-red-900;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:focus {
+        box-shadow: none;
+        outline-color: $khpi-red-900;
+        outline-offset: 4px;
+    }
+    & > i::after {
+        content: '\00a0';
+    }
+}
+
 // style changes for light theme
 body {
     &.theme-light,
