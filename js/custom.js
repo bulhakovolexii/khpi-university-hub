@@ -48,3 +48,52 @@ window.addEventListener('resize', () => {
         toggleMenu()
     }
 })
+
+// expand all btn for su accordion
+document.querySelectorAll('.su-accordion.with-expand-btn').forEach((accordion) => {
+    const spoilers = accordion.querySelectorAll('.su-spoiler')
+    if (spoilers.length === 0) return
+
+    const container = document.createElement('div')
+    container.classList.add('su-expand-container')
+    const button = document.createElement('button')
+    container.prepend(button)
+    button.classList.add('su-expand-btn')
+    const icon = document.createElement('i')
+    button.prepend(icon)
+    updateButtonText(button, spoilers)
+    button.addEventListener('click', () => toggleSpoilers(button, spoilers))
+
+    accordion.insertBefore(container, spoilers[0])
+
+    spoilers.forEach((spoiler) => {
+        spoiler.addEventListener('click', (event) => {
+            event.stopPropagation()
+            spoiler.classList.toggle('su-spoiler-closed')
+            updateButtonText(button, spoilers)
+        })
+    })
+})
+
+function updateButtonText(button, spoilers) {
+    const allOpen = [...spoilers].every((spoiler) => !spoiler.classList.contains('su-spoiler-closed'))
+    const lang = document.documentElement.lang
+    const icon = button.querySelector('i')
+
+    if (allOpen) {
+        button.textContent = lang === 'uk' ? 'Згорнути все' : 'Collapse All'
+        icon.className = 'fa-solid fa-arrows-up-to-line'
+    } else {
+        button.textContent = lang === 'uk' ? 'Розгорнути все' : 'Expand All'
+        icon.className = 'fa-solid fa-arrows-down-to-line'
+    }
+    button.prepend(icon)
+}
+
+function toggleSpoilers(button, spoilers) {
+    const allOpen = [...spoilers].every((spoiler) => !spoiler.classList.contains('su-spoiler-closed'))
+    spoilers.forEach((spoiler) => {
+        spoiler.classList.toggle('su-spoiler-closed', allOpen)
+    })
+    updateButtonText(button, spoilers)
+}
