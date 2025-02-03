@@ -68,9 +68,11 @@ document.querySelectorAll('.su-accordion.with-expand-btn').forEach((accordion) =
 
     spoilers.forEach((spoiler) => {
         spoiler.addEventListener('click', (event) => {
-            event.stopPropagation()
-            spoiler.classList.toggle('su-spoiler-closed')
-            updateButtonText(button, spoilers)
+            if (event.target === spoiler || event.target.closest('.su-spoiler-title')) {
+                event.stopPropagation()
+                spoiler.classList.toggle('su-spoiler-closed')
+                updateButtonText(button, spoilers)
+            }
         })
     })
 })
