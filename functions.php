@@ -380,6 +380,13 @@ add_filter(
     2,
 );
 
+add_filter('document_title_parts', function ($title) {
+    if (isset($title['title'])) {
+        $title['title'] = str_replace('<br>', ' ', $title['title']); // Remove <br> from <title>
+    }
+    return $title;
+});
+
 /**
  * Enable polylang settings in customizer
  */
