@@ -10,37 +10,24 @@ if (args.length === 0) {
 }
 const version = args[0]
 const themeName = 'khpi-university-hub'
-const outputDir = path.join(__dirname, `${themeName}`)
 const distDir = path.join(__dirname, 'dist')
+const themeDir = path.join(__dirname, 'wp-content', 'themes', themeName)
 
 // Make sure the ./dist folder exists
 fs.ensureDirSync(distDir)
 
-// Excluded files and folders
-const exclusions = ['node_modules', 'build.js', 'dist', 'package.json', 'package-lock.json', 'scss', '.git', '.gitignore', '.env', 'megamenu-themes', 'cse-guide', themeName]
-
-// Cleaning the build folder
-fs.removeSync(outputDir)
-fs.ensureDirSync(outputDir)
-
-// Copy files, excluding unnecessary ones
-fs.readdirSync(__dirname).forEach((item) => {
-    if (!exclusions.includes(item) && !item.startsWith('.')) {
-        const sourcePath = path.join(__dirname, item)
-        const destinationPath = path.join(outputDir, item)
-        fs.copySync(sourcePath, destinationPath)
-    }
-})
+// Check if the theme directory exists
+if (!fs.existsSync(themeDir)) {
+    console.error(`❌ Theme directory not found: ${themeDir}`)
+    process.exit(1)
+}
 
 // Create a zip archive in the dist folder
 const outputZip = fs.createWriteStream(path.join(distDir, `${themeName}.${version}.zip`))
 const archive = archiver('zip', { zlib: { level: 9 } })
 
 outputZip.on('close', () => {
-    console.log(`✅ Archive created: dist/${themeName}.${version}.zip (${archive.pointer()} bites)`)
-
-    // Delete temporary folder after archiving is complete
-    fs.removeSync(outputDir)
+    console.log(`✅ Archive created: dist/${themeName}.${version}.zip (${archive.pointer()} bytes)`)
 })
 
 archive.on('error', (err) => {
@@ -48,5 +35,5 @@ archive.on('error', (err) => {
 })
 
 archive.pipe(outputZip)
-archive.directory(outputDir, themeName)
+archive.directory(themeDir, themeName)
 archive.finalize()

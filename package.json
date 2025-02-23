@@ -1,10 +1,10 @@
 {
     "name": "university-hub-child",
     "scripts": {
-        "sass-dev": "sass --watch --no-source-map scss:.",
-        "sass-prod": "sass --no-source-map scss:.",
+        "sass-dev": "sass --watch --no-source-map scss:./wp-content/themes/khpi-university-hub",
+        "sass-prod": "sass --no-source-map scss:./wp-content/themes/khpi-university-hub",
         "format": "prettier --write .",
-        "check-format": "prettier --check functions.php",
+        "check-format": "prettier --check",
         "build": "npm run sass-prod && npm run format && node build.js"
     },
     "author": "Olexii Bulhakov",

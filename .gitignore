@@ -1,8 +1,12 @@
 node_modules/
 
 dist/
-css/
-*.css
+
+/wp-content/*
+!/wp-content/dump.sql
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/khpi-university-hub/
 
 # OS settings and caches
 .trash/
