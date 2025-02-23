@@ -25,18 +25,18 @@ $latest_news_excerpt_length = university_hub_get_option('latest_news_excerpt_len
       'ignore_sticky_posts' => true,
   ];
 
-if (absint($latest_news_category) > 0) {
-    $qargs['cat'] = absint($latest_news_category);
-}
+  if (absint($latest_news_category) > 0) {
+      $qargs['cat'] = absint($latest_news_category);
+  }
 
-// Fetch posts.
-$the_query = new WP_Query($qargs);
-?>
+  // Fetch posts.
+  $the_query = new WP_Query($qargs);
+  ?>
 
 		<?php if ($the_query->have_posts()): ?>
 			<div class="inner-wrapper latest-news-wrapper latest-news-col-<?php echo absint($latest_news_column); ?> latest-news-layout-<?php echo absint($latest_news_layout); ?>">
 				<?php while ($the_query->have_posts()):
-				    $the_query->the_post(); ?>
+        $the_query->the_post(); ?>
 					<div class="latest-news-item">
 						<div class="latest-news-inner-wrapper">
 							<div class="latest-news-thumb">
@@ -61,16 +61,16 @@ $the_query = new WP_Query($qargs);
 									<?php endif; ?>
 								</div><!-- .latest-news-meta -->
 								<?php
-				    $excerpt = university_hub_the_excerpt(absint($latest_news_excerpt_length));
-				    if ($excerpt) {
-				        echo wp_kses_post(wpautop($excerpt));
-				    }
-				    ?>
+        $excerpt = university_hub_the_excerpt(absint($latest_news_excerpt_length));
+        if ($excerpt) {
+            echo wp_kses_post(wpautop($excerpt));
+        }
+        ?>
 							</div><!-- .latest-news-text-wrap -->
 						</div> <!-- .latest-news-inner-wrap -->
 					</div><!-- .latest-news-item -->
 				<?php
-				endwhile; ?>
+    endwhile; ?>
 			</div><!-- .latest-news-wrapper -->
 
 			<?php wp_reset_postdata(); ?>
@@ -78,14 +78,10 @@ $the_query = new WP_Query($qargs);
 
             <!-- more-news -->
 			<?php
-            $blog_page_url = esc_url(get_permalink(get_option('page_for_posts')));
-		    $news_link = !empty($latest_news_category)
-		        ? esc_url(get_category_link($latest_news_category))
-		        : $blog_page_url;
-		    $news_title = !empty($latest_news_title)
-		        ? esc_html__("All", "khpi-university-hub") . ' ' . esc_html(mb_strtolower($latest_news_title))
-		        : esc_html_e('Latest News', 'university-hub');
-		    ?>
+   $blog_page_url = esc_url(get_permalink(get_option('page_for_posts')));
+   $news_link = !empty($latest_news_category) ? esc_url(get_category_link($latest_news_category)) : $blog_page_url;
+   $news_title = !empty($latest_news_title) ? esc_html__('All', 'khpi-university-hub') . ' ' . esc_html(mb_strtolower($latest_news_title)) : esc_html_e('Latest News', 'university-hub');
+   ?>
 
 			<div class="clear:right;"></div>
 			<div>
