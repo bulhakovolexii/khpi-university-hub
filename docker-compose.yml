@@ -5,11 +5,11 @@ services:
         volumes:
             - ./wp-content:/var/www/html/wp-content
         environment:
-            - WORDPRESS_DB_NAME=wordpress
+            - WORDPRESS_DB_NAME=wp-test
             - WORDPRESS_TABLE_PREFIX=wp_
             - WORDPRESS_DB_HOST=db
-            - WORDPRESS_DB_USER=root
-            - WORDPRESS_DB_PASSWORD=password
+            - WORDPRESS_DB_USER=wordpress
+            - WORDPRESS_DB_PASSWORD=111222333444555
         depends_on:
             - db
             - phpmyadmin
@@ -23,13 +23,13 @@ services:
         volumes:
             - db_data:/var/lib/mysql
             # This is optional!!!
-            # - ./wp-content/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+            - ./wp-content/dump.sql:/docker-entrypoint-initdb.d/dump.sql
             # # #
         environment:
             - MYSQL_ROOT_PASSWORD=password
-            - MYSQL_USER=root
-            - MYSQL_PASSWORD=password
-            - MYSQL_DATABASE=wordpress
+            - MYSQL_USER=wordpress
+            - MYSQL_PASSWORD=111222333444555
+            - MYSQL_DATABASE=wp-test
         restart: always
 
     phpmyadmin:

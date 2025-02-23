@@ -4,6 +4,7 @@ dist/
 
 /wp-content/*
 !/wp-content/dump.sql
+!/wp-content/uploads/
 !/wp-content/themes/
 /wp-content/themes/*
 !/wp-content/themes/khpi-university-hub/
