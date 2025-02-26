@@ -28,7 +28,7 @@
 
 ### Початкове налаштування
 
-1. Увійти в адмін-панель WordPress (<http://localhost:8080/wp-admin/>) з логіном admin та паролем 1111.
+1. Увійти в адмін-панель WordPress (<http://localhost:8080/wp-admin/>) з логіном `admin` та паролем `1111`.
 2. В меню “Теми” завантажити батьківську тему University Hub.
 3. Активувати дочірню тему KhPI University Hub.
 
