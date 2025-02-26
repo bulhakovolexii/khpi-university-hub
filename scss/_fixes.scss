@@ -302,6 +302,12 @@ a.custom-logo-link {
     object-fit: cover;
 }
 
+@media only screen and (max-width: 1000px) {
+    #main-slider img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
 #main-slider h3 {
     background: rgba(160, 0, 27, 1) none repeat scroll 0 0; // Same as $khpi-red-900 but rgba
 }
