@@ -1013,6 +1013,11 @@ a.custom-logo-link {
     }
 }
 
+// enable smooth scrolling
+html {
+    scroll-behavior: smooth;
+}
+
 // style changes for light theme
 body {
     &.theme-light,
