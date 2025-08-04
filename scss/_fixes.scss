@@ -250,33 +250,6 @@ a.custom-logo-link {
     text-shadow: none;
 }
 
-/*x.com*/
-.university_hub_widget_social ul li a[href*='x.com']::before {
-    content: '\e61b';
-}
-
-.university_hub_widget_social ul li a[href*='x.com'] {
-    background-color: #000000;
-}
-
-/*telegram*/
-.university_hub_widget_social ul li a[href*='t.me']::before {
-    content: '\f2c6';
-}
-
-.university_hub_widget_social ul li a[href*='t.me'] {
-    background-color: #24a1de;
-}
-
-/*tiktok*/
-.university_hub_widget_social ul li a[href*='tiktok.com']::before {
-    content: '\e07b';
-}
-
-.university_hub_widget_social ul li a[href*='tiktok.com'] {
-    background-color: #010101;
-}
-
 /*remove all bg-colors*/
 .university_hub_widget_social ul li a {
     background-color: $khpi-red-900 !important;
