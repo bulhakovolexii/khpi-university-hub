@@ -6434,6 +6434,10 @@ a.custom-logo-link {
   font-weight: 500;
 }
 
+.home-section-call-to-action .cta-btn:hover {
+  color: #a0001b;
+}
+
 /*--------------------------------------------------------------
 ### Our Team section style By WEN Themes
 --------------------------------------------------------------*/
